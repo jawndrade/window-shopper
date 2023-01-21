@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './Header';
 
-export default function ListItem() {
+export default function AddItem() {
+
+  //TODO: POST New Item to DB.json || Redirect to SHOP onSubmit
   return (
     <>
         <Header/>

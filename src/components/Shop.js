@@ -2,9 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Search from './Search';
 import { Link } from 'react-router-dom';
-import Item from './Item';
+import ItemList from './ItemList';
 
 export default function Shop() {
+
+    //------------------->TODO: Handle Category Filter onChange || Styling  <------------------
   return (
     <>
         <Header/>
@@ -30,7 +32,7 @@ export default function Shop() {
             </div>
 
             <div>
-                <Item/>
+                <ItemList/>
             </div>
         </div>
     </>

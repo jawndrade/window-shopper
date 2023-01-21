@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 export default function Item() {
 
+    //----------->   TODO: Handle Toggle Side for Description || Dynamically Update Price Img, etc.   <---------------
+
     const [side, setSide] = useState("front");
 
   return (

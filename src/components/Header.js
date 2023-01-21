@@ -9,7 +9,7 @@ export default function Header() {
         <h1>WindowShopper</h1>
         <button>Toggle Dark Mode</button>
         <NavLink to="/shop"><button>Shop</button></NavLink>
-        <NavLink to='/listItem'><button>List An Item</button></NavLink>
+        <NavLink to='/addItem'><button>List An Item</button></NavLink>
         <NavLink to="/likes"><button>Likes/Dislikes</button></NavLink>
         <NavLink to="/cart"><button>Cart</button></NavLink>
     </>

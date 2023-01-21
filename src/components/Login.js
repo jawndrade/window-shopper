@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 function Login() {
+//-------------->TODO: Handle Login Events || onSubmit Verify User exists and is authenticated => Route to Home <----------------
   return (
     <div>
         <div>

@@ -6,7 +6,7 @@ import SignUp from "./components/SignUp";
 import Shop from "./components/Shop";
 import Likes from "./components/Likes";
 import Cart from "./components/Cart";
-import ListItem from "./components/ListItem";
+import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
 
 function App() {
@@ -40,8 +40,8 @@ function App() {
           element={<Cart/>}
         />
         <Route
-          path="/listItem"
-          element={<ListItem/>}
+          path="/addItem"
+          element={<AddItem/>}
         />
         <Route
           path="/windowshop"
