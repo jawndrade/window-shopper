@@ -370,24 +370,6 @@
       "gender": "Male",
       "likes": [],
       "dislikes": []
-    },
-    {
-      "name": "Dylan",
-      "email": "dylanrhinehart@gmail.com",
-      "password": "12345",
-      "gender": "Male",
-      "likes": [],
-      "dislikes": [],
-      "id": 2
-    },
-    {
-      "name": "Dylan",
-      "email": "Dylan@gmail.com",
-      "password": "12345",
-      "gender": "Male",
-      "likes": [],
-      "dislikes": [],
-      "id": 3
     }
   ]
 }
