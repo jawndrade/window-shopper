@@ -10,24 +10,29 @@ import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
 
 function App() {
+
+  //State 
   const [itemList, setItemList] = useState([])
   const [isDarkMode, setDarkMode] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
-  function handleDarkMode() {
-    setDarkMode(!isDarkMode);
-  }
-
+  // Fetch Database of Items and store in State
   useEffect(() => {
   fetch("http://localhost:3000/items")
     .then(r => r.json())
     .then(data => setItemList(data))
   },[])
 
+  //Dark Mode
+  function handleDarkMode() {
+    setDarkMode(!isDarkMode);
+  }
+
   return (
       <Routes>
         <Route 
           path="/" 
-          element={<Login/>}
+          element={<Login setCurrentUser={setCurrentUser} />}
         />
         <Route 
           path="/signup" 
