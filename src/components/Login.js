@@ -3,8 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Login( { setCurrentUser }) {
 //-------------->TODO: Handle Login Events || onSubmit Verify User exists and is authenticated => Route to Home <----------------
+  
+  //State for Current DB of Users
   const [users, setUsers] = useState();
 
+  // callback to useNavigate for use within function
   const navigate = useNavigate();
 
   const initialFormData = {
@@ -12,6 +15,7 @@ function Login( { setCurrentUser }) {
     password: ""
   };
 
+  //Form Input State
   const [formData, setFormData] = useState(initialFormData);
 
    //Fetch Users From db.json and store in state
@@ -21,10 +25,14 @@ function Login( { setCurrentUser }) {
     .then(obj => setUsers(obj));
   }, []);
   
+  // handle form input Change
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   }
 
+  // Handle ON Login Which Checks for Email in db.json 
+  // and then verifies that password is correct
+  
   const handleLogin = (e) => {
     const found = users.find(user => user.email === formData.email);
     e.preventDefault();

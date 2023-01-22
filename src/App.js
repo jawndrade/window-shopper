@@ -36,7 +36,7 @@ function App() {
         />
         <Route 
           path="/signup" 
-          element={<SignUp />}
+          element={<SignUp setCurrentUser={setCurrentUser} />}
         />
         <Route 
           path="/shop" 
