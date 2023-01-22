@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -10,12 +10,18 @@ import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
 
 function App() {
-
+  const [itemList, setItemList] = useState([])
   const [isDarkMode, setDarkMode] = useState(false);
 
   function handleDarkMode() {
     setDarkMode(!isDarkMode);
   }
+
+  useEffect(() => {
+  fetch("http://localhost:3000/items")
+    .then(r => r.json())
+    .then(data => setItemList(data))
+  },[])
 
   return (
       <Routes>
@@ -29,7 +35,7 @@ function App() {
         />
         <Route 
           path="/shop" 
-          element={<Shop/>}
+          element={<Shop itemList={itemList}/>}
         />
         <Route
           path="/likes"
