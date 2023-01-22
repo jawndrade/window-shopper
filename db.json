@@ -1,4 +1,5 @@
-[   
+{
+    "items": [   
         {        
             "id": 1,        
             "name": "Leather jacket",        
@@ -360,4 +361,17 @@
             "color": "Purple"
           }
           
-]
+    ],
+    
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john@gmail.com",
+            "password": "12345",
+            "likes": [],
+            "dislikes": []
+        }
+    ]
+}
+
