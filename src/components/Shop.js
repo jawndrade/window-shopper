@@ -16,7 +16,7 @@ export default function Shop({itemList}) {
 const selectedCat = (e) => {
     setSelectedCategory(e.target.value)
 }
-const selectedCategoryToDisplay = itemList.filter(item =>{
+const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
     if(selectedCategory === "All")return true
     return item.category === selectedCategory
 })
@@ -31,9 +31,9 @@ const selectedCategoryToDisplay = itemList.filter(item =>{
                 <Link to='/windowshop'><button>Toggle Window Shop</button></Link>
             </div>
 
-            <div>
+            <div> 
                 <Search
-                searchItem = {searchItem} 
+                searchItem = {searchItem}
                 onChangeSearch={setSearchItem}/>
             </div>
 
@@ -49,7 +49,7 @@ const selectedCategoryToDisplay = itemList.filter(item =>{
             </div>
 
             <div>
-                <ItemList itemList={itemToDisplay}/>
+                <ItemList itemList={selectedCategoryToDisplay}/>
             </div>
         </div>
     </>
