@@ -274,7 +274,7 @@
       "id": 31,
       "name": "Basic Tee",
       "price": 20,
-      "category": "T-Shirts",
+      "category": "Tops",
       "image": "https://img.ltwebstatic.com/images3_pi/2022/03/18/1647565154c7670d3714e81367097020266dbf638e_thumbnail_900x.webp",
       "description": "A classic, comfortable tee made from 100% cotton.",
       "color": "White"
@@ -284,7 +284,7 @@
       "name": "Fitted Tank",
       "price": 25,
       "image": "https://img.ltwebstatic.com/images3_pi/2022/06/28/16564049771367baf4fd86579a05fa4d07c3f90354_thumbnail_900x.webp",
-      "category": "Tanks",
+      "category": "Tops",
       "description": "A slim-fit tank top made from a soft, stretchy material.",
       "color": "Black"
     },
@@ -293,7 +293,7 @@
       "name": "Chiffon Blouse",
       "price": 35,
       "image": "https://cdni.llbean.net/is/image/wim/276118_332_41?hei=1092&wid=950&resMode=sharp2&defaultImage=llbprod/A0211793_2",
-      "category": "Blouses",
+      "category": "Tops",
       "description": "A sheer, flowy blouse with a button-down front.",
       "color": "Pink"
     },
@@ -302,7 +302,7 @@
       "name": "Striped Tee",
       "price": 30,
       "image": "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T43_3647_E4_X_EC_90?$Intl_PDP_Tab$",
-      "category": "T-Shirts",
+      "category": "Tops",
       "description": "A casual, striped tee made from breathable cotton.",
       "color": "Blue"
     },
@@ -311,7 +311,7 @@
       "name": "Cropped Tank",
       "price": 22,
       "image": "https://img.ltwebstatic.com/images3_pi/2021/05/13/1620871106db0342ef69bc108e6b2cea7ec4a36aea_thumbnail_900x.webp",
-      "category": "Tanks",
+      "category": "Tops",
       "description": "A trendy, cropped tank top with a scoop neckline.",
       "color": "Yellow"
     },
@@ -320,7 +320,7 @@
       "name": "Silk Cami",
       "price": 45,
       "image": "https://img.staticdj.com/1ee9492f9663cb339f58b32430232317_1080x.jpeg",
-      "category": "Camisoles",
+      "category": "Tops",
       "description": "A luxurious, silk cami with spaghetti straps.",
       "color": "Red"
     },
@@ -338,7 +338,7 @@
       "name": "Sleeveless Blouse",
       "price": 38,
       "image": "https://i.ebayimg.com/images/g/7uIAAOSwxqpis-VD/s-l1600.jpg",
-      "category": "Blouses",
+      "category": "Tops",
       "description": "A versatile, sleeveless blouse with a collar.",
       "color": "Orange"
     },
@@ -347,7 +347,7 @@
       "name": "V-Neck Tee",
       "price": 25,
       "image": "https://images.express.com/is/image/expressfashion/0036_05051954_0086_f?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
-      "category": "T-Shirts",
+      "category": "Tops",
       "description": "A relaxed, v-neck tee with short sleeves.",
       "color": "Gray"
     },
