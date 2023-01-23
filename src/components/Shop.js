@@ -1,10 +1,17 @@
 import React from 'react';
+import { useState } from 'react';
 import Header from './Header';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 
 export default function Shop({itemList}) {
+
+
+  const [searchItem, setSearchItem] = useState("")
+  const itemToDisplay = itemList.filter((item) =>
+  item.name.toLowerCase().includes(searchItem.toLowerCase())
+)
 
     //------------------->TODO: Handle Category Filter onChange || Styling  <------------------
   return (
@@ -17,7 +24,9 @@ export default function Shop({itemList}) {
             </div>
 
             <div>
-                <Search/>
+                <Search
+                searchItem = {searchItem} 
+                onChangeSearch={setSearchItem}/>
             </div>
 
             <div>
@@ -32,7 +41,7 @@ export default function Shop({itemList}) {
             </div>
 
             <div>
-                <ItemList itemList={itemList}/>
+                <ItemList itemList={itemToDisplay}/>
             </div>
         </div>
     </>
