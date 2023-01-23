@@ -1,12 +1,14 @@
 import React from 'react';
 import Item from './Item';
 
-export default function ItemList({itemList}) {
+export default function ItemList({itemList, cartItems, setCartItems}) {
 
   const itemCards = itemList.map(item => 
     <Item 
       key={item.id}
       item={item}
+      cartItems={cartItems}
+      setCartItems={setCartItems}
     />
   )
 

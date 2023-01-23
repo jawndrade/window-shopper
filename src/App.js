@@ -8,11 +8,13 @@ import Likes from "./components/Likes";
 import Cart from "./components/Cart";
 import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
+// import Header from './components/Header';
 
 function App() {
 
   //State 
   const [itemList, setItemList] = useState([])
+  const [cartItems, setCartItems] = useState([])
   const [isDarkMode, setDarkMode] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
@@ -23,14 +25,14 @@ function App() {
     .then(data => setItemList(data))
   },[])
 
+ //add new item to list
+ const handleAddItem = (newItem) => {
+  setItemList([...itemList, newItem])
+}
+
   //Dark Mode
   function handleDarkMode() {
     setDarkMode(!isDarkMode);
-  }
-
-  //add new item to list
-  const handleAddItem = (newItem) => {
-    setItemList([...itemList, newItem])
   }
 
   return (
@@ -45,7 +47,9 @@ function App() {
         />
         <Route 
           path="/shop" 
-          element={<Shop itemList={itemList}/>}
+          element={(
+          <Shop itemList={itemList} cartItems={cartItems} setCartItems={setCartItems} />
+          )}
         />
         <Route
           path="/likes"
@@ -53,7 +57,7 @@ function App() {
         />
         <Route 
           path="/cart"
-          element={<Cart/>}
+          element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>}
         />
         <Route
           path="/addItem"
