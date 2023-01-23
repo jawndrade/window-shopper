@@ -28,6 +28,11 @@ function App() {
     setDarkMode(!isDarkMode);
   }
 
+  //add new item to list
+  const handleAddItem = (newItem) => {
+    setItemList([...itemList, newItem])
+  }
+
   return (
       <Routes>
         <Route 
@@ -52,7 +57,7 @@ function App() {
         />
         <Route
           path="/addItem"
-          element={<AddItem/>}
+          element={<AddItem handleAddItem={handleAddItem}/>}
         />
         <Route
           path="/windowshop"
