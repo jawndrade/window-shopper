@@ -9,9 +9,17 @@ export default function Shop({itemList}) {
 
 
   const [searchItem, setSearchItem] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All")
   const itemToDisplay = itemList.filter((item) =>
   item.name.toLowerCase().includes(searchItem.toLowerCase())
 )
+const selectedCat = (e) => {
+    setSelectedCategory(e.target.value)
+}
+const selectedCategoryToDisplay = itemList.filter(item =>{
+    if(selectedCategory === "All")return true
+    return item.category === selectedCategory
+})
 
     //------------------->TODO: Handle Category Filter onChange || Styling  <------------------
   return (
@@ -31,12 +39,12 @@ export default function Shop({itemList}) {
 
             <div>
                 <label for="category">Category:</label>
-                <select name="category" id="category">
-                    <option value="shirt">Shirt</option>
-                    <option value="pants">Pants</option>
+                <select name="category" id="category" onChange={selectedCat}>
+                    <option value="All">All Categories</option>
+                    <option value="Tops">Shirt</option>
+                    <option value="bottoms">Pants</option>
                     <option value="shoes">Shoes</option>
-                    <option value="hat">Hat</option>
-                    <option value="jacket">Jacket</option>
+                    <option value="Jackets">Jacket</option>
                 </select>
             </div>
 
