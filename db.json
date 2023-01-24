@@ -369,7 +369,8 @@
       "password": "12345",
       "gender": "Male",
       "likes": [],
-      "dislikes": []
+      "dislikes": [],
+      "inCart": []
     }
   ]
 }

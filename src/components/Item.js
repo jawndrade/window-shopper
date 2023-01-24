@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex}) {
+export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
 
   const {id, name, price, image, category, description, color} = item;
-
+    
     const [isBack, setIsBack] = useState(false);
     const [displayToolTip, setDisplayToolTip] = useState(false);
-    
+    const [isInCart, setInCart] = useState(false);
+
+    const handleCartPatch = (newCartItems) => {
+      fetch(`http://localhost:3000/users/${currentUser.id}`,{
+        method: "PATCH",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json"
+        },
+        body: JSON.stringify({inCart: newCartItems})
+      }).then(res => res.json())
+      .then(console.log(`Added ${[newCartItems]}`))
+      .catch(err => console.log(err));
+    }
+
     const handleFlip = () => {
       setIsBack(prev => !prev)
     }
@@ -16,10 +30,16 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const frontHover = <div>Click To View Description</div>
     const backHover = <div>Click To View Item</div>
 
+    const notInCart = <button onClick={() => onAddToCart(item)}>Add to Cart</button>
+    const addMoreToCart = <button onClick={() => onAddToCart(item)}>Add Another To Cart</button>
+    const inCart = <button onClick={() => onRemoveFromCart(item)}>Remove From Cart</button>
+
     const front = 
       <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
+          
           <h3>{name}</h3>
-          <button onClick={() => onAddToCart(item)}>Add to Cart</button>
+          {isInCart ? addMoreToCart : notInCart}
+          {isInCart ? inCart : null}
           <img src={image} onClick={handleFlip} alt={description} />
           {displayToolTip? frontHover : null }
           <h4>Price: ${price}</h4>
@@ -30,7 +50,10 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
   const back = 
     <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
+        
         <h3>{name}</h3>
+        {isInCart ? addMoreToCart : notInCart}
+        {isInCart ? inCart : null}
         <button onClick={() => onAddToCart(item)} >Add to Cart</button>
         <h4>{category}</h4>
         <h4>{description}</h4>
@@ -43,38 +66,27 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
   //add item to cart
   const onAddToCart = (item) => {
-    const existingCartItems = cartItems.find((x) => x.id === item.id)
+    let newCartItems = [...cartItems, item];
+    
     if (isWindowShop === true) {
       setIndex(prev => prev + 1);
-      if (existingCartItems) {
-        const newCartItems = cartItems.map((x) => 
-          x.id === item.id ? {...existingCartItems, item} : x
-        )
-        setCartItems(newCartItems)
-      } else {
-        const newCartItems = [...cartItems, item]
-        setCartItems(newCartItems)
-      }
+      setInCart(true);
+      setCartItems(newCartItems);
     }
     else {
-      if (existingCartItems) {
-        const newCartItems = cartItems.map((x) => 
-          x.id === item.id ? {...existingCartItems, item} : x
-        )
-        setCartItems(newCartItems)
-      } else {
-        const newCartItems = [...cartItems, item]
-        setCartItems(newCartItems)
+      setInCart(true);
+        setCartItems(newCartItems);
+        setInCart(true);
       }
+      handleCartPatch(newCartItems);
     }
-  }
+  
 
   //remove item from cart
   const onRemoveFromCart = (item) => {
-    const existingCartItems = cartItems.find((x) => x.id === item.id)
-    if (existingCartItems.quantity === 1) {
       const newCartItems = cartItems.filter((x) => x.id !== item.id)
-  }
+      setCartItems(newCartItems)
+      handleCartPatch();
 } 
 
   //add to likes

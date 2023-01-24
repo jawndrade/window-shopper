@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUp({ setCurrentUser }) {
+export default function SignUp({ setCurrentUser}) {
 //----------------->TODO: POST new User to users.json => Redirect to SHOP upon success <--------------
   
     const [users, setUsers] = useState();
@@ -20,7 +20,8 @@ export default function SignUp({ setCurrentUser }) {
    useEffect(() => {
     fetch(" http://localhost:3000/users")
     .then(res => res.json())
-    .then(obj => setUsers(obj));
+    .then(obj => setUsers(obj))
+    .catch(err => console.log(err));
   }, []);
 
     const handleChange = (e) => {
@@ -34,13 +35,14 @@ export default function SignUp({ setCurrentUser }) {
         const found = users.find(user => user.email === formData.email);
 
         const newUser = 
-        {
+        {       "id": users.length + 1,
                 "name": formData.name,
                 "email": formData.email,
                 "password": formData.password,
                 "gender": formData.gender,
                 "likes": [],
-                "dislikes": []
+                "dislikes": [],
+                "inCart": []
         };
 
         //Check to see if user email already exists 
