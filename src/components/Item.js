@@ -60,10 +60,10 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   //add to likes
 
   const onAddToLikes = (item) => {
-    const yourLikedItems = likedItems.find((x) => x.id === item.id)
+    const yourLikedItems = likedItems.find((liked) => liked.id === item.id)
     if (yourLikedItems) {
-      const newLikedItems = likedItems.map((x) => 
-        x.id === item.id ? {...yourLikedItems, item} : x
+      const newLikedItems = likedItems.map((liked) => 
+      liked.id === item.id ? {...yourLikedItems, item} : liked
       ) 
       setLikedItems(newLikedItems)
     } else {
