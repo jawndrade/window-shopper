@@ -19,13 +19,14 @@ function App() {
   const [dislikedItems,setDislikedItems] =useState([])
   const [isDarkMode, setDarkMode] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [isWindowShop, setIsWindowShop] = useState(false);
 
   // Fetch Database of Items and store in State
   useEffect(() => {
   fetch("http://localhost:3000/items")
     .then(r => r.json())
     .then(data => setItemList(data))
-  },[])
+  },[isWindowShop])
 
  //add new item to list
  const handleAddItem = (newItem) => {
@@ -51,13 +52,16 @@ function App() {
           path="/shop" 
           element={(
           <Shop 
+              isWindowShop={isWindowShop}
+              setIsWindowShop={setIsWindowShop}
               itemList={itemList} 
               cartItems={cartItems} 
               setCartItems={setCartItems}
               likedItems={likedItems}
               setLikedItems={setLikedItems}
               dislikedItems={dislikedItems} 
-              setDislikedItems={setDislikedItems} />
+              setDislikedItems={setDislikedItems} 
+          />
               )}
         />
         <Route
@@ -77,7 +81,18 @@ function App() {
         />
         <Route
           path="/windowshop"
-          element={<WindowShop/>}
+          element={<WindowShop
+              isWindowShop={isWindowShop}
+              setIsWindowShop={setIsWindowShop}
+              itemList={itemList}
+              setItemList={setItemList} 
+              cartItems={cartItems} 
+              setCartItems={setCartItems}
+              likedItems={likedItems}
+              setLikedItems={setLikedItems}
+              dislikedItems={dislikedItems} 
+              setDislikedItems={setDislikedItems}
+          />}
         />
       </Routes>
   );
