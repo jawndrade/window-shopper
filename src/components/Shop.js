@@ -4,17 +4,26 @@ import Header from './Header';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
+import Spotify from "react-spotify-embed"
+
 
 export default function Shop({itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems}) {
-
+  const [musicShowing, setMusicShowing] = useState(true)
   const [searchItem, setSearchItem] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
+
+  const musicToggleClick = () => {
+    setMusicShowing(prev => !prev)
+  }
+  
   const itemToDisplay = itemList.filter((item) =>
   item.name.toLowerCase().includes(searchItem.toLowerCase())
 )
+
 const selectedCat = (e) => {
     setSelectedCategory(e.target.value)
 }
+
 const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
     if(selectedCategory === "All")return true
     return item.category === selectedCategory
@@ -25,6 +34,8 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
     <>
         <Header/>
         <h1>Shop</h1>
+        {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
+        <button name="spotify" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
         <div>
             <div>
                 <Link to='/windowshop'><button>Toggle Window Shop</button></Link>
