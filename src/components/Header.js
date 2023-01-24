@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Header() {
-  const [backToShop , setBackToShop] = useState()
 
+  const navigate = useNavigate();
 const handleBackToShop = () => {
-  console.log("Go Back To The Shop!")
+  navigate("/shop");
 }
   return (
     <>
