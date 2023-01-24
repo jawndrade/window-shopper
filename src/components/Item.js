@@ -3,33 +3,40 @@ import React, { useState } from 'react';
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex}) {
 
   const {id, name, price, image, category, description, color} = item;
-    //----------->   TODO: Handle Toggle Side for Description || Dynamically Update Price Img, etc.   <---------------
 
     const [isBack, setIsBack] = useState(false);
-
+    const [displayToolTip, setDisplayToolTip] = useState(false);
     
     const handleFlip = () => {
       setIsBack(prev => !prev)
     }
+    const handleHover = () => {
+      setDisplayToolTip(prev => !prev);
+    }
+    const frontHover = <div>Click To View Description</div>
+    const backHover = <div>Click To View Item</div>
 
     const front = 
-      <div id={id}>
+      <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
           <h3>{name}</h3>
           <button onClick={() => onAddToCart(item)}>Add to Cart</button>
           <img src={image} onClick={handleFlip} alt={description} />
+          {displayToolTip? frontHover : null }
           <h4>Price: ${price}</h4>
           <button onClick={() => onAddToLikes(item)}>Like</button>
           <button onClick={() => onAddToDislikes(item)}>Dislike</button>
+          
       </div>
 
   const back = 
-    <div id={id} onClick={handleFlip}>
+    <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
         <h3>{name}</h3>
         <button onClick={() => onAddToCart(item)} >Add to Cart</button>
         <h4>{category}</h4>
         <h4>{description}</h4>
         <h4>{color}</h4>
         <h4>Price: ${price}</h4>
+        {displayToolTip? backHover: null}
         <button onClick={() => onAddToLikes(item)}>Like</button>
         <button onClick={() => onAddToDislikes(item)}>Dislike</button>
     </div>
