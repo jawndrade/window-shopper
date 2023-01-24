@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import Item from './Item';
 
 
-export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
-
-  const [index, setIndex] = useState(0);
+export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems, index, setIndex}) {
 
   const itemCards = itemList.map(item => 
     <Item 
