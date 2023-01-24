@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
-function Login( { setCurrentUser }) {
+function Login( { setCurrentUser, setCartItems }) {
 //-------------->TODO: Handle Login Events || onSubmit Verify User exists and is authenticated => Route to Home <----------------
   
   //State for Current DB of Users
@@ -39,6 +39,7 @@ function Login( { setCurrentUser }) {
     if (found !== undefined) {
       if (found.password === formData.password){
         setCurrentUser(found);
+        setCartItems(found.inCart)
         navigate("/shop");
       }
       else {

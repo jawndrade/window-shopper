@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Item from './Item';
 
 
-export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems, index, setIndex}) {
+export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
   const itemCards = itemList.map(item => 
     <Item 
@@ -17,6 +17,7 @@ export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartI
       isWindowShop={isWindowShop}
       index={index}
       setIndex={setIndex}
+      currentUser={currentUser}
     />
   )
   

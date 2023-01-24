@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 import Spotify from "react-spotify-embed";
 
-export default function WindowShop({isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex}) {
+export default function WindowShop({isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
     //------------->TODO: Render Single Item || STYLE for WindowShop Mode<------------------
     const [musicShowing, setMusicShowing] = useState(true)
@@ -75,6 +75,7 @@ export default function WindowShop({isWindowShop, setIsWindowShop, itemList, set
               setDislikedItems={setDislikedItems}
               index={index}
               setIndex={setIndex}
+              currentUser={currentUser}
             />
         </>
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Header from './Header';
 import Search from './Search';
@@ -7,7 +7,7 @@ import ItemList from './ItemList';
 import Spotify from "react-spotify-embed"
 
 
-export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex}) {
+export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
   const [musicShowing, setMusicShowing] = useState(true)
   const [searchItem, setSearchItem] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -73,6 +73,7 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
                     setDislikedItems={setDislikedItems}
                     index={index}
                     setIndex={setIndex}
+                    currentUser={currentUser}
                   />
             </div>
         </div>

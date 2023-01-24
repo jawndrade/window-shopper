@@ -43,11 +43,11 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<Login setCurrentUser={setCurrentUser} />}
+          element={<Login setCurrentUser={setCurrentUser} setCartItems={setCartItems}/>}
         />
         <Route 
           path="/signup" 
-          element={<SignUp setCurrentUser={setCurrentUser} />}
+          element={<SignUp setCurrentUser={setCurrentUser} setCartItems={setCartItems} />}
         />
         <Route 
           path="/shop" 
@@ -64,6 +64,7 @@ function App() {
               setDislikedItems={setDislikedItems}
               index={index}
               setIndex={setIndex}
+              currentUser={currentUser}
           />
               )}
         />
@@ -76,7 +77,7 @@ function App() {
         />
         <Route 
           path="/cart"
-          element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>}
+          element={<Cart cartItems={cartItems} setCartItems={setCartItems} currentUser={currentUser}/>}
         />
         <Route
           path="/addItem"
@@ -97,6 +98,7 @@ function App() {
               setDislikedItems={setDislikedItems}
               index={index}
               setIndex={setIndex}
+              currentUser={currentUser}
           />}
         />
       </Routes>
