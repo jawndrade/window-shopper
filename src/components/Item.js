@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, ButtonGroup, Card, Col, Row } from 'react-bootstrap';
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
 
@@ -14,26 +15,49 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
       console.log("ADDTOLIKE")
     }
     const front = 
-      <div>
-          <h3>{name}</h3>
-          <button onClick={() => onAddToCart(item)}>Add to Cart</button>
-          <img src={image} onClick={handleFlip}/>
-          <h4>Price: ${price}</h4>
-          <button onClick={() => onAddToLikes(item)}>Like</button>
-          <button onClick={() => onAddToDislikes(item)}>Dislike</button>
-      </div>
+      <>
+        <Row xs={1} md={2} className="g-4">
+          {Array.from({ length: 4 }).map((_, idx) => (
+            <Col>
+              <Card border="dark" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={image} onClick={handleFlip}/>
+                <Card.Body>
+                  <Card.Title>{name}</Card.Title>
+                  <Button variant="dark" onClick={() => onAddToCart(item)}>Add to Cart</Button>
+                  <Card.Text>Price: ${price}</Card.Text>
+                  <ButtonGroup className="mb-2">
+                    <Button variant="dark" onClick={() => onAddToLikes(item)}>Like</Button>
+                    <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
+                  </ButtonGroup>
+                </Card.Body>
+              </Card>
+            </Col>
+        ))} 
+        </Row>
+      </>
 
   const back = 
-    <div >
-        <h3 onClick={handleFlip}>{name}</h3>
-        <button onClick={() => onAddToCart(item)} >Add to Cart</button>
-        <h4>{category}</h4>
-        <h4>{description}</h4>
-        <h4>{color}</h4>
-        <h4>Price: ${price}</h4>
-        <button onClick={() => onAddToLikes(item)}>Like</button>
-        <button onClick={() => onAddToDislikes(item)}>Dislike</button>
-    </div>
+    <>
+      <Row xs={1} md={2} className="g-4">
+          {Array.from({ length: 4 }).map((_, idx) => (
+            <Col>
+              <Card border="dark" style={{ width: '18rem' }}>
+                <Card.Title onClick={handleFlip}>{name}</Card.Title>
+                <Card.Subtitle>Price: ${price}</Card.Subtitle>
+                <Card.Text>
+                  {description}
+                </Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
+                <Button variant="dark" onClick={() => onAddToCart(item)}>Add to Cart</Button>
+                <ButtonGroup className="mb-2">
+                  <Button variant="dark" onClick={() => onAddToLikes(item)}>Like</Button>
+                  <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
+                </ButtonGroup>
+          </Card>
+        </Col>
+        ))} 
+      </Row>
+    </>
 
   //add item to cart
   const onAddToCart = (item) => {
@@ -87,6 +111,16 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   }
 }
   return (
-    isBack ? back : front
+    <>
+    {isBack ? back : front}
+    {/* <Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={image}/>
+    <Card.Body>
+    <Card.Title>{name}</Card.Title>
+    <Card.Text></Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+    </Card.Body>
+</Card> */}
+</>
   )
 }

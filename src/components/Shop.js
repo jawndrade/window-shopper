@@ -4,7 +4,7 @@ import Header from './Header';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
-import Spotify from "react-spotify-embed"
+import Spotify from "react-spotify-embed";
 
 
 export default function Shop({itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems}) {
