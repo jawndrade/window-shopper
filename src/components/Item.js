@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems}) {
+export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
 
   const {id, name, price, image, category, description, color} = item;
     //----------->   TODO: Handle Toggle Side for Description || Dynamically Update Price Img, etc.   <---------------
@@ -20,7 +20,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
           <img src={image} onClick={handleFlip}/>
           <h4>Price: ${price}</h4>
           <button onClick={() => onAddToLikes(item)}>Like</button>
-          <button>Dislike</button>
+          <button onClick={() => onAddToDislikes(item)}>Dislike</button>
       </div>
 
   const back = 
@@ -32,7 +32,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
         <h4>{color}</h4>
         <h4>Price: ${price}</h4>
         <button onClick={() => onAddToLikes(item)}>Like</button>
-        <button>Dislike</button>
+        <button onClick={() => onAddToDislikes(item)}>Dislike</button>
     </div>
 
   //add item to cart
@@ -72,6 +72,20 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     }
   }
  //add to dislikes
+
+ 
+ const onAddToDislikes = (item) => {
+  const yourDislikedItems = dislikedItems.find((disliked) => disliked.id === item.id)
+  if (yourDislikedItems) {
+    const newDislikedItems = dislikedItems.map((disliked) => 
+    disliked.id === item.id ? {...yourDislikedItems, item} : disliked
+    ) 
+    setDislikedItems(newDislikedItems)
+  } else {
+    const newDislikedItems = [...dislikedItems, item]
+    setDislikedItems(newDislikedItems)
+  }
+}
   return (
     isBack ? back : front
   )

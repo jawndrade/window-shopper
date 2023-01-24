@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from './Item';
 
-export default function ItemList({itemList, cartItems, setCartItems,likedItems, setLikedItems}) {
+export default function ItemList({itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
 
   const itemCards = itemList.map(item => 
     <Item 
@@ -11,6 +11,8 @@ export default function ItemList({itemList, cartItems, setCartItems,likedItems, 
       setCartItems={setCartItems}
       likedItems={likedItems}
       setLikedItems={setLikedItems}
+      dislikedItems={dislikedItems}
+      setDislikedItems={setDislikedItems}
     />
   )
 

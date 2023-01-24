@@ -5,7 +5,7 @@ import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 
-export default function Shop({itemList, cartItems, setCartItems,likedItems,setLikedItems}) {
+export default function Shop({itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems}) {
 
   const [searchItem, setSearchItem] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -53,6 +53,8 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
                     setCartItems={setCartItems}
                     likedItems={likedItems} 
                     setLikedItems={setLikedItems}
+                    dislikedItems={dislikedItems}
+                    setDislikedItems={setDislikedItems}
                   />
             </div>
         </div>
