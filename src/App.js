@@ -20,6 +20,7 @@ function App() {
   const [isDarkMode, setDarkMode] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isWindowShop, setIsWindowShop] = useState(false);
+  const [index, setIndex] = useState(0);
 
   // Fetch Database of Items and store in State
   useEffect(() => {
@@ -60,7 +61,9 @@ function App() {
               likedItems={likedItems}
               setLikedItems={setLikedItems}
               dislikedItems={dislikedItems} 
-              setDislikedItems={setDislikedItems} 
+              setDislikedItems={setDislikedItems}
+              index={index}
+              setIndex={setIndex}
           />
               )}
         />
@@ -92,6 +95,8 @@ function App() {
               setLikedItems={setLikedItems}
               dislikedItems={dislikedItems} 
               setDislikedItems={setDislikedItems}
+              index={index}
+              setIndex={setIndex}
           />}
         />
       </Routes>
