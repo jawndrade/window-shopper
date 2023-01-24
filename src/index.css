@@ -1,10 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+:root {
+  --primary-color: #324e7a;
+  --secondary-color: #4d77bb;
+  --font-color: #3e5f95;
+  --bg-color: #white;
+  --heading-color: #5c737b;
+}
+
+/* dark mode */
+[data-theme="dark"] {
+  --primary-color: #f0f5fe;
+  --secondary-color: #d9e7fe;
+  --font-color: #3e5f95;
+  --bg-color: #324e7a;
+  --heading-color: #5c737b;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  margin: 20;
+  font-family: 'Raleway', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+h2 {
+  color: var(--secondary-color);
+}
+
+h3 {
+  color: var(--secondary-color);
+}
+
+h4 {
+  color: var(--primary-color);
+}
+
+label {
+  color: var(--secondary-color);
+}
+
+select {
+  font-family: 'Raleway', sans-serif;
+}
+
+option {
+  font-family: 'Raleway', sans-serif;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
 }
 
 code {

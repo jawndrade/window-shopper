@@ -36,7 +36,7 @@ function App() {
 
   //Dark Mode
   function handleDarkMode() {
-    setDarkMode(!isDarkMode);
+    setDarkMode(prev => !prev);
   }
 
   return (
