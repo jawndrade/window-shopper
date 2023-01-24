@@ -16,6 +16,7 @@ function App() {
   const [itemList, setItemList] = useState([])
   const [cartItems, setCartItems] = useState([])
   const [likedItems, setLikedItems] = useState([])
+  const [dislikedItems,setDislikedItems] =useState([])
   const [isDarkMode, setDarkMode] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
@@ -49,12 +50,22 @@ function App() {
         <Route 
           path="/shop" 
           element={(
-          <Shop itemList={itemList} cartItems={cartItems} setCartItems={setCartItems}likedItems={likedItems} setLikedItems={setLikedItems} />
-          )}
+          <Shop 
+              itemList={itemList} 
+              cartItems={cartItems} 
+              setCartItems={setCartItems}
+              likedItems={likedItems}
+              setLikedItems={setLikedItems}
+              dislikedItems={dislikedItems} 
+              setDislikedItems={setDislikedItems} />
+              )}
         />
         <Route
           path="/likes"
-          element={<Likes likedItems={likedItems} setLikedItems={setLikedItems}/>}
+          element={<Likes likedItems={likedItems} 
+          setLikedItems={setLikedItems} 
+          dislikedItems={dislikedItems} 
+          setDislikedItems={setDislikedItems}/>}
         />
         <Route 
           path="/cart"
