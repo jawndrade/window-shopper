@@ -9,6 +9,12 @@ export default function Likes({likedItems, setLikedItems}) {
           likedItems={likedItems}
           setLikedItems={setLikedItems}
       />)
+      const dislikesToShow= disLikedItems.map((item) => <Item 
+          key={item.id}
+          item={item}
+          dislikedItems={dislikedItems}
+          setDislikedItems={setDislikedItems}
+      />)
   return (
     <>
         <Header/>
