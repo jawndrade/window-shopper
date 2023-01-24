@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import { Col, Row } from 'react-bootstrap';
 
 export default function ItemList({itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
 
@@ -20,7 +21,13 @@ export default function ItemList({itemList, cartItems, setCartItems,likedItems, 
   return (
     <div>
         <h1>Item List</h1>
-        {itemCards}
+        <Row xs={1} md={2} className="g-4">
+          {Array.from({ length: 4 }).map((_, idx) => (
+            <Col>
+            {itemCards}
+            </Col>
+        ))} 
+        </Row>
     </div>
   )
 }

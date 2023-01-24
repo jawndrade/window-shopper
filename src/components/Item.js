@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Card, Col, Row } from 'react-bootstrap';
+import { Button, ButtonGroup, Card } from 'react-bootstrap';
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems}) {
 
@@ -14,11 +14,12 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const handleLikes = () => {
       console.log("ADDTOLIKE")
     }
+
     const front = 
       <>
-        <Row xs={1} md={2} className="g-4">
+        {/* <Row xs={1} md={2} className="g-4">
           {Array.from({ length: 4 }).map((_, idx) => (
-            <Col>
+            <Col> */}
               <Card border="dark" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={image} onClick={handleFlip}/>
                 <Card.Body>
@@ -31,16 +32,16 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
                   </ButtonGroup>
                 </Card.Body>
               </Card>
-            </Col>
+            {/* </Col>
         ))} 
-        </Row>
+        </Row> */}
       </>
 
   const back = 
     <>
-      <Row xs={1} md={2} className="g-4">
+      {/* <Row xs={1} md={2} className="g-4">
           {Array.from({ length: 4 }).map((_, idx) => (
-            <Col>
+            <Col> */}
               <Card border="dark" style={{ width: '18rem' }}>
                 <Card.Title onClick={handleFlip}>{name}</Card.Title>
                 <Card.Subtitle>Price: ${price}</Card.Subtitle>
@@ -54,9 +55,9 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
                   <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
                 </ButtonGroup>
           </Card>
-        </Col>
+        {/* </Col>
         ))} 
-      </Row>
+      </Row> */}
     </>
 
   //add item to cart
@@ -113,14 +114,6 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   return (
     <>
     {isBack ? back : front}
-    {/* <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={image}/>
-    <Card.Body>
-    <Card.Title>{name}</Card.Title>
-    <Card.Text></Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-</Card> */}
-</>
+    </>
   )
 }

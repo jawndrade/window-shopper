@@ -2,16 +2,16 @@
   "items": [
     {
       "id": 1,
-      "name": "Leather jacket",
+      "name": "Leather Jacket",
       "price": 150,
-      "image": "https://i.ebayimg.com/images/g/abgAAOSw4m9cAPFL/s-l500.jpg",
+      "image": "https://static.zara.net/photos///2021/I/0/1/p/3046/636/800/2/w/850/3046636800_6_1_1.jpg?ts=1632741057228",
       "category": "Jackets",
       "description": "A classic, black leather jacket with silver hardware.",
       "color": "black"
     },
     {
       "id": 2,
-      "name": "Denim jacket",
+      "name": "Denim Jacket",
       "price": 75,
       "image": "https://m.media-amazon.com/images/I/71B00FJz8VL._AC_UF1000,1000_QL80_.jpg",
       "category": "Jackets",
@@ -29,16 +29,16 @@
     },
     {
       "id": 4,
-      "name": "Bomber jacket",
+      "name": "Bomber Jacket",
       "price": 90,
       "image": "http://cache.mrporter.com/variants/images/32027475400169568/in/w2000_q60.jpg",
       "category": "Jackets",
       "description": "A black, ribbed bomber jacket with a zip-up front.",
-      "color": "black"
+      "color": "Black"
     },
     {
       "id": 5,
-      "name": "Trench coat",
+      "name": "Trench Coat",
       "price": 200,
       "image": "https://www.thekooples.com/dw/image/v2/BGQL_PRD/on/demandware.static/-/Sites-skp-master-catalog/default/dw7df26bac/images/hi-res/HMA1002BEI01_F.jpg?sw=900&sh=1105",
       "category": "Jackets",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "name": "Puffer jacket",
+      "name": "Puffer Jacket",
       "price": 130,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LlqvVbTz51y6du5OzNzBm5qEYZqQ5fqYaQ&usqp=CAU",
       "category": "Jackets",
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "name": "Suede jacket",
+      "name": "Suede Jacket",
       "price": 160,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf3D4pWO_KfQNZARcoH8dTSWc1LqvV0E_0Xw&usqp=CAU",
       "category": "Jackets",
@@ -83,7 +83,7 @@
     },
     {
       "id": 10,
-      "name": "Varsity jacket",
+      "name": "Varsity Jacket",
       "price": 100,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnS-OGkzD5IXIPN_w7Xp9IzDGQ02pVo0apIQ&usqp=CAU",
       "category": "Jackets",
