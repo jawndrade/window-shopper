@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart } from "react-icons/bs";
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
 
@@ -7,17 +8,29 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const [isBack, setIsBack] = useState(false);
     const [displayToolTip, setDisplayToolTip] = useState(false);
     const [isInCart, setInCart] = useState(false);
+    const [isLiked, setIsLiked] = useState(false);
+    const [isDisliked, setIsDisliked] = useState(false);
 
-    const handleCartPatch = (newCartItems) => {
+  
+      useEffect(() => {
+        fetch("http://localhost:3000/users")
+        .then(res => res.json())
+        .then((obj)=> {
+         setLikedItems(obj[currentUser.id-1].likes)
+         setDislikedItems(obj[currentUser.id-1].dislikes)
+         setInCart(obj[currentUser.id-1].inCart)
+        })
+      }, [])
+    
+    const handleUserPatch = (key, value) => {
       fetch(`http://localhost:3000/users/${currentUser.id}`,{
         method: "PATCH",
         headers: {
           accept: "application/json",
           "content-type": "application/json"
         },
-        body: JSON.stringify({inCart: newCartItems})
+        body: JSON.stringify({[key]: value})
       }).then(res => res.json())
-      .then(console.log(`Added ${[newCartItems]}`))
       .catch(err => console.log(err));
     }
 
@@ -27,13 +40,17 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const handleHover = () => {
       setDisplayToolTip(prev => !prev);
     }
+
+
     const frontHover = <div>Click To View Description</div>
     const backHover = <div>Click To View Item</div>
 
-    const notInCart = <button onClick={() => onAddToCart(item)}>Add to Cart</button>
-    const addMoreToCart = <button onClick={() => onAddToCart(item)}>Add Another To Cart</button>
-    const inCart = <button onClick={() => onRemoveFromCart(item)}>Remove From Cart</button>
+    const notInCart = <button onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></button>
+    const addMoreToCart = <button onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></button>
+    const inCart = <button onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></button>
 
+    const filledHeart = <BsFillHeartFill/>;
+    const emptyHeart = <BsHeart/>;
     const front = 
       <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
           
@@ -43,8 +60,9 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
           <img src={image} onClick={handleFlip} alt={description} />
           {displayToolTip? frontHover : null }
           <h4>Price: ${price}</h4>
-          <button onClick={() => onAddToLikes(item)}>Like</button>
-          <button onClick={() => onAddToDislikes(item)}>Dislike</button>
+          <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
+          
+          <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
           
       </div>
 
@@ -54,7 +72,6 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
         <h3>{name}</h3>
         {isInCart ? addMoreToCart : notInCart}
         {isInCart ? inCart : null}
-        <button onClick={() => onAddToCart(item)} >Add to Cart</button>
         <h4>{category}</h4>
         <h4>{description}</h4>
         <h4>{color}</h4>
@@ -77,43 +94,52 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
       setInCart(true);
         setCartItems(newCartItems);
         setInCart(true);
-      }
-      handleCartPatch(newCartItems);
     }
+    handleUserPatch("inCart",newCartItems);
+  }
   
 
   //remove item from cart
   const onRemoveFromCart = (item) => {
       const newCartItems = cartItems.filter((x) => x.id !== item.id)
       setCartItems(newCartItems)
-      handleCartPatch();
+      handleUserPatch("inCart", newCartItems);
+      if (cartItems.length <= 1) return setInCart(false);
 } 
 
   //add to likes
-
   const onAddToLikes = (item) => {
     const yourLikedItems = likedItems.find((liked) => liked.id === item.id)
     if (isWindowShop === true) {
       setIndex(prev => prev + 1);
+      setIsLiked(true);
       if (yourLikedItems) {
         const newLikedItems = likedItems.map((liked) => 
         liked.id === item.id ? {...yourLikedItems, item} : liked
         ) 
         setLikedItems(newLikedItems)
+        handleUserPatch("likes", [...newLikedItems]);
       } else {
         const newLikedItems = [...likedItems, item]
         setLikedItems(newLikedItems)
+        handleUserPatch("likes", [...newLikedItems]);
       }
     }
     else {
+      setIsLiked(true);
+      if (isDisliked) {
+        setIsDisliked(false);
+      }
       if (yourLikedItems) {
         const newLikedItems = likedItems.map((liked) => 
         liked.id === item.id ? {...yourLikedItems, item} : liked
         ) 
         setLikedItems(newLikedItems)
+        handleUserPatch("likes", [...newLikedItems])
       } else {
         const newLikedItems = [...likedItems, item]
         setLikedItems(newLikedItems)
+        handleUserPatch("likes", [...newLikedItems])
       }
     }
   }
@@ -124,14 +150,20 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const yourDislikedItems = dislikedItems.find((disliked) => disliked.id === item.id)
   if (isWindowShop === true) {
     setIndex(prev => prev + 1);
+    setIsDisliked(true);
+    if (isLiked === true) {
+      setIsLiked(false);
+    }
     if (yourDislikedItems) {
       const newDislikedItems = dislikedItems.map((disliked) => 
       disliked.id === item.id ? {...yourDislikedItems, item} : disliked
       ) 
       setDislikedItems(newDislikedItems)
+      handleUserPatch("dislikes", [...newDislikedItems]);
     } else {
       const newDislikedItems = [...dislikedItems, item]
       setDislikedItems(newDislikedItems)
+      handleUserPatch("dislikes", [...newDislikedItems]);
     }
   }
   else {
@@ -140,9 +172,11 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
       disliked.id === item.id ? {...yourDislikedItems, item} : disliked
       ) 
       setDislikedItems(newDislikedItems)
+      handleUserPatch("dislikes", [...newDislikedItems]);
     } else {
       const newDislikedItems = [...dislikedItems, item]
       setDislikedItems(newDislikedItems)
+      handleUserPatch("dislikes", [...newDislikedItems]);
     }
   }
   
