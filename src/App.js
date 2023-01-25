@@ -8,7 +8,7 @@ import Likes from "./components/Likes";
 import Cart from "./components/Cart";
 import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
-// import Header from './components/Header';
+
 
 function App() {
 
