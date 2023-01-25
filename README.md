@@ -1,3 +1,78 @@
+# Window Shopper
+Phase 2 Project: React, JavaScript, HTML, CSS, JSON
+
+## Introduction
+Window Shopper is a shopping app that allows users to view/like/dislike items, add items to cart, search/filter items, and list items to sell.
+
+## Repo
+* GitHub Repository: https://github.com/jawndrade/window-shopper
+
+## Technologies
+* React
+* JavaScript
+* HTML
+* CSS
+* JSON  
+
+## User Stories
+The user can:
+* Login to an existing account
+* Sign up and create an account
+* View ALL items
+* View one item at a time (window shop)
+* Like or dislike items
+* Add items to their cart
+* Remove items from cart
+* Search for an item
+* Filter items by category
+* Add items to sell
+
+## Setup
+To run this project, follow the following steps:
+1. Clone [repository](https://github.com/jawndrade/window-shopper)
+```
+git clone https://github.com/jawndrade/window-shopper
+```
+2. Get the server running
+```
+cd window-shopper
+```
+```
+json-server --watch db.json
+```
+3. Install packages and start the app
+```
+npm i && npm start
+```
+
+## DEMO
+
+<!-- Add DEMO gif or picture here of each page that shows their functionality -->
+
+
+## Features
+### Backend API Points
+METHOD | ENDPOINT | DESCRIPTION
+------ | ---------| -----------
+GET | /items | fetches a list of items and their data from the database
+POST | /items | keeps a new item from "list item" form
+GET | /users | fetches a list of users
+POST | /users | keeps a new user from sign up page
+
+### Client-Side Routes
+ROUTE | DESCRIPTION
+---------| -----------
+/ | home page + login page
+/signup | sign up page
+/shop | view all items
+/windowshop | view one item at a time
+/additem | list a new item
+/cart | view your cart
+/likes | view your likes and dislikes
+
+
+<!-- Put features here! -->
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,24 +144,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # window-shopper -->
-
-# Window Shopper
-
-Window Shopper is a shopping app that allows users to view/like/dislike items, add items to cart, search/filter items, and list items to sell.
-
-## DEMO
-
-<!-- Add DEMO gif or picture here of each page that shows their functionality -->
-
-
-## User Stories
-The User can :
-*add items to sell
-*view items
-*like or dislike items
-*add items to their cart
-*remove items from cart
-
-## Feature
-
-<!-- Put features here! -->
