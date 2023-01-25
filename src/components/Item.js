@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart } from "react-icons/bs";
+import { Button, ButtonToolbar, Card } from 'react-bootstrap'
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
 
@@ -52,34 +53,41 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const filledHeart = <BsFillHeartFill/>;
     const emptyHeart = <BsHeart/>;
     const front = 
-      <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
-          
-          <h3>{name}</h3>
+    <>
+      <Card border="dark" style={{ width: '19rem' }}>
+        <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
+          <Card.Img src={image} onClick={handleFlip} alt={description} />
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+          <Card.Text>Price: ${price}</Card.Text>
+          <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
+          <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
           {isInCart ? addMoreToCart : notInCart}
           {isInCart ? inCart : null}
-          <img src={image} onClick={handleFlip} alt={description} />
           {displayToolTip? frontHover : null }
-          <h4>Price: ${price}</h4>
-          <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
-          
-          <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
-          
-      </div>
+        </Card.Body>
+        </div>
+      </Card>
+    </>
 
   const back = 
-    <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
-        
-        <h3>{name}</h3>
-        {isInCart ? addMoreToCart : notInCart}
-        {isInCart ? inCart : null}
-        <h4>{category}</h4>
-        <h4>{description}</h4>
-        <h4>{color}</h4>
-        <h4>Price: ${price}</h4>
+    <>
+      <Card border="dark" style={{ width: '19rem' }}>
+        <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Subtitle>Price: ${price}</Card.Subtitle>
+            <Card.Text>{description}</Card.Text>
+            <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
         {displayToolTip? backHover: null}
-        <button onClick={() => onAddToLikes(item)}>Like</button>
-        <button onClick={() => onAddToDislikes(item)}>Dislike</button>
-    </div>
+        <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
+        <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
+        {isInCart ? addMoreToCart : notInCart}
+              {isInCart ? inCart : null}
+        </Card.Body>
+      </div>
+      </Card>
+    </>
 
   //add item to cart
   const onAddToCart = (item) => {
