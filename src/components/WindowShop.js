@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 import Spotify from "react-spotify-embed";
 
-export default function WindowShop({isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
+export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
     //------------->TODO: Render Single Item || STYLE for WindowShop Mode<------------------
     const [musicShowing, setMusicShowing] = useState(true)
@@ -36,7 +36,10 @@ export default function WindowShop({isWindowShop, setIsWindowShop, itemList, set
 
   return (
         <>
-            <Header/>
+            <Header
+              handleDarkMode={handleDarkMode}
+              isDarkMode={isDarkMode}
+            />
             <h1>Window Shop</h1>
             {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
             <button name="spotify" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
