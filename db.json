@@ -2,18 +2,18 @@
   "items": [
     {
       "id": 1,
-      "name": "Leather jacket",
+      "name": "Leather Jacket",
       "price": 150,
-      "image": "https://i.ebayimg.com/images/g/abgAAOSw4m9cAPFL/s-l500.jpg",
+      "image": "https://static.zara.net/photos///2021/I/0/1/p/3046/636/800/2/w/850/3046636800_6_1_1.jpg?ts=1632741057228",
       "category": "Jackets",
       "description": "A classic, black leather jacket with silver hardware.",
       "color": "black"
     },
     {
       "id": 2,
-      "name": "Denim jacket",
+      "name": "Denim Jacket",
       "price": 75,
-      "image": "https://m.media-amazon.com/images/I/71B00FJz8VL._AC_UF1000,1000_QL80_.jpg",
+      "image": "https://static.zara.net/photos///2022/I/0/2/p/5575/310/400/2/w/750/5575310400_6_1_1.jpg?ts=1662712313516",
       "category": "Jackets",
       "description": "A light blue, distressed denim jacket with button closures.",
       "color": "light blue"
@@ -22,14 +22,14 @@
       "id": 3,
       "name": "Parka",
       "price": 120,
-      "image": "https://i.ebayimg.com/images/g/rJ4AAOSwBnZazMiw/s-l500.jpg",
+      "image": "https://static.zara.net/photos///2023/V/0/2/p/3918/406/505/2/w/750/3918406505_6_1_1.jpg?ts=1669648695704",
       "category": "Jackets",
       "description": "A green, insulated parka with a fur-trimmed hood.",
       "color": "green"
     },
     {
       "id": 4,
-      "name": "Bomber jacket",
+      "name": "Bomber Jacket",
       "price": 90,
       "image": "http://cache.mrporter.com/variants/images/32027475400169568/in/w2000_q60.jpg",
       "category": "Jackets",
@@ -38,57 +38,57 @@
     },
     {
       "id": 5,
-      "name": "Trench coat",
+      "name": "Trench Coat",
       "price": 200,
-      "image": "https://www.thekooples.com/dw/image/v2/BGQL_PRD/on/demandware.static/-/Sites-skp-master-catalog/default/dw7df26bac/images/hi-res/HMA1002BEI01_F.jpg?sw=900&sh=1105",
+      "image": "https://static.zara.net/photos///2023/V/0/1/p/3811/040/450/2/w/1024/3811040450_6_1_1.jpg?ts=1674040695504",
       "category": "Jackets",
       "description": "A beige, double-breasted trench coat with a belt.",
       "color": "beige"
     },
     {
       "id": 6,
-      "name": "Puffer jacket",
+      "name": "Puffer Jacket",
       "price": 130,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LlqvVbTz51y6du5OzNzBm5qEYZqQ5fqYaQ&usqp=CAU",
+      "image": "https://static.zara.net/photos///2023/V/0/1/p/3427/884/707/2/w/1024/3427884707_6_1_1.jpg?ts=1672747278246",
       "category": "Jackets",
-      "description": "A black, insulated puffer jacket with a hood.",
-      "color": "black"
+      "description": "A tan, insulated puffer jacket with a hood.",
+      "color": "tan"
     },
     {
       "id": 7,
       "name": "Raincoat",
       "price": 70,
-      "image": "https://www.acornonline.com/graphics/products/zoom/XD3832_pr.jpg",
+      "image": "https://static.zara.net/photos///2022/I/0/3/p/5475/703/800/2/w/1024/5475703800_6_1_1.jpg?ts=1664782895084",
       "category": "Jackets",
-      "description": "A yellow, waterproof raincoat with a hood.",
-      "color": "yellow"
+      "description": "A green, waterproof raincoat with a hood.",
+      "color": "green"
     },
     {
       "id": 8,
-      "name": "Suede jacket",
+      "name": "Suede Jacket",
       "price": 160,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf3D4pWO_KfQNZARcoH8dTSWc1LqvV0E_0Xw&usqp=CAU",
+      "image": "https://img.abercrombie.com/is/image/anf/KIC_144-1071-1168-401_prod1?policy=product-large",
       "category": "Jackets",
-      "description": "A brown, suede jacket with fringe detailing.",
+      "description": "A brown, suede jacket.",
       "color": "brown"
     },
     {
       "id": 9,
       "name": "Peacoat",
       "price": 130,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb_nCpJ7CtLlpViXJqWS6fXtD0-DAibVbnfQ&usqp=CAU",
+      "image": "https://cdni.llbean.net/is/image/wim/260345_74_41?hei=1092&wid=950&resMode=sharp2&defaultImage=llbprod/A0211793_2",
       "category": "Jackets",
       "description": "A navy blue, double-breasted peacoat with button closures.",
       "color": "navy blue"
     },
     {
       "id": 10,
-      "name": "Varsity jacket",
+      "name": "Varsity Jacket",
       "price": 100,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnS-OGkzD5IXIPN_w7Xp9IzDGQ02pVo0apIQ&usqp=CAU",
+      "image": "https://img.abercrombie.com/is/image/anf/KIC_132-3137-1773-408_prod1?policy=product-large",
       "category": "Jackets",
-      "description": "A black and white, varsity-style jacket with a button-up front and lettering on the back.",
-      "color": "black and white"
+      "description": "A revamped take on a classic varsity jacket in a soft faux suede fabric and relaxed-fit silhouette.",
+      "color": "tan"
     },
     {
       "id": 11,
@@ -103,7 +103,7 @@
       "id": 12,
       "name": "Adidas Ultraboost 21",
       "price": 180,
-      "image": "https://www.shooos.co.uk/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/a/d/adidas-ultraboost-21-w-black-fy0402.jpg",
+      "image": "https://media.finishline.com/i/finishline/FY0378_001_P2?$default$&w=670&h=670&bg=rgb(237,237,237)",
       "category": "shoes",
       "description": "The Adidas Ultraboost 21 is a high-performance running shoe with a responsive cushioning system.",
       "color": "White/Black"
@@ -121,7 +121,7 @@
       "id": 14,
       "name": "Vans Old Skool",
       "price": 65,
-      "image": "https://img1.cgtrader.com/items/3063155/3b54b446b4/large/vans-old-skool-white-3d-model-low-poly-max-obj-3ds-fbx-stl.jpg",
+      "image": "https://images.vans.com/is/image/Vans/VN000D3HW00-HERO?wid=1600&hei=1600&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.7,8,0&bgc=e5e5e9",
       "category": "shoes",
       "description": "The Vans Old Skool is a classic skate shoe with a durable canvas and suede upper.",
       "color": "White"
@@ -130,16 +130,16 @@
       "id": 15,
       "name": "Puma Cali Sport",
       "price": 90,
-      "image": "https://cdna.lystit.com/photos/footshop/823ec71f/puma-white-Cali-Sport-Mix-Wn-S-White-Marshmallow.jpeg",
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1750,h_1750/global/387888/03/sv01/fnd/PNA/fmt/png/Cali-Dream-Leather-Sneakers-Big-Kids",
       "category": "shoes",
       "description": "The Puma Cali Sport is a stylish and comfortable casual shoe with a suede upper.",
-      "color": "Pink/White"
+      "color": "White"
     },
     {
       "id": 16,
       "name": "Jordan 1 Mid",
       "price": 110,
-      "image": "https://static.shiekh.com/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/6/2/62bc65f31e981464795b26122fb1367d.jpg",
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0e7fc8f3-76b7-4631-b147-4dad4b1ff241/air-jordan-1-mid-shoes-X5pM09.png",
       "category": "shoes",
       "description": "The Jordan 1 Mid is a classic basketball shoe featuring a leather upper and Air-Sole unit.",
       "color": "Black/Red"
@@ -148,16 +148,16 @@
       "id": 17,
       "name": "Nike Kyrie 7",
       "price": 130,
-      "image": "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/074/831/887/original/958122_01.jpg.jpeg?action=crop&width=750",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQmB6PYh4YfhY7u6fPQW_k9l_S4z9WhCyE68DeB9X98HJ-F83kODnkQgVIIUiXUja_KZUZXqApweUoeKn5xWy7eNmmRcNECFA&usqp=CAY",
       "category": "shoes",
       "description": "The Nike Kyrie 7 is a high-performance basketball shoe designed for quick cuts and fast moves.",
       "color": "White/Blue"
     },
     {
       "id": 18,
-      "name": "Timberland 6-Inch Premium Boot",
+      "name": "Timberland Premium Boot",
       "price": 200,
-      "image": "https://m.media-amazon.com/images/I/61LWu0+zeSL._AC_UF1000,1000_QL80_.jpg",
+      "image": "https://images.dsw.com/is/image/DSWShoes/308527_001_ss_01?impolicy=qlt-medium-high&imwidth=640&imdensity=2",
       "category": "shoes",
       "description": "The Timberland 6-Inch Premium Boot is a durable work boot with a waterproof leather upper.",
       "color": "Black"
@@ -173,7 +173,7 @@
     },
     {
       "id": 20,
-      "name": "Thursday Boot Co. Captain",
+      "name": "Thursday Boot Co. Boot",
       "price": 125,
       "image": "https://cdn.shopify.com/s/files/1/0419/1525/products/T-1024x1024-Men-Captain-Arizona-LB1_480x480.jpg?v=1569061198",
       "category": "shoes",
@@ -220,7 +220,7 @@
       "id": 25,
       "name": "H&M Slim Fit Chinos",
       "price": 35,
-      "image": "https://lp2.hm.com/hmprod?hmver=1&set=quality%5B79%5D%2Csource%5B%2Fmodel%2F2017%2FF00+0491913+002+98+3802.jpg%5D%2Ctype%5BSTILLLIFE_FRONT%5D&call=url[file:/product/main]",
+      "image": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fb0%2F65%2Fb065f6a01d74e56d6230cade5b7ffd5788268a8e.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
       "category": "bottoms",
       "description": "The H&M Slim Fit Chinos are a stylish and comfortable slim fit chino made with a cotton blend.",
       "color": "Beige"
@@ -236,9 +236,9 @@
     },
     {
       "id": 27,
-      "name": "Carhartt Crawford Double-Front Bib Overalls",
+      "name": "Carhartt Bib Overalls",
       "price": 70,
-      "image": "https://assets.basspro.com/image/upload/b_rgb:FFFFFF,c_limit,dpr_1.0,f_auto,h_1044,q_auto,w_1200/c_limit,h_1044,w_1200/v1/ProductImages/650/carharttbrown_100079603_main?pgw=1",
+      "image": "https://cdn.shopify.com/s/files/1/0073/1797/9225/products/228740_silo_brown_800x800.jpg?v=1569383458",
       "category": "bottoms",
       "description": "The Carhartt® Crawford Double-Front Bib Overalls were built for rough and tough days. Rugged Flex® technology moves with you for all-day comfort and style, while the multi-compartment bib pocket with zip closure organizes and stores essentials. ",
       "color": "Brown"
@@ -247,7 +247,7 @@
       "id": 28,
       "name": "adidas Tiro 19 Training Pants",
       "price": 50,
-      "image": "https://m.media-amazon.com/images/I/5152SYOUtmL._AC_UX679_.jpg",
+      "image": "https://cdn.shopify.com/s/files/1/0111/7333/1040/products/Tiro_19_Training_Pants_Grey_DZ6168_01_laydown.jpg?v=1669427701",
       "category": "bottoms",
       "description": "The adidas Tiro 19 Training Pants are a comfortable and moisture-wicking training pant.",
       "color": "Black"
@@ -275,33 +275,33 @@
       "name": "Basic Tee",
       "price": 20,
       "category": "Tops",
-      "image": "https://img.ltwebstatic.com/images3_pi/2022/03/18/1647565154c7670d3714e81367097020266dbf638e_thumbnail_900x.webp",
+      "image": "https://img.abercrombie.com/is/image/anf/KIC_139-3188-1260-112_prod1?policy=product-large",
       "description": "A classic, comfortable tee made from 100% cotton.",
-      "color": "White"
+      "color": "Gray"
     },
     {
       "id": 32,
       "name": "Fitted Tank",
       "price": 25,
-      "image": "https://img.ltwebstatic.com/images3_pi/2022/06/28/16564049771367baf4fd86579a05fa4d07c3f90354_thumbnail_900x.webp",
+      "image": "https://aritzia.scene7.com/is/image/Aritzia/s23_02_a01_78462_7640_off_a?wid=1200",
       "category": "Tops",
       "description": "A slim-fit tank top made from a soft, stretchy material.",
-      "color": "Black"
+      "color": "Gray"
     },
     {
       "id": 33,
       "name": "Chiffon Blouse",
       "price": 35,
-      "image": "https://cdni.llbean.net/is/image/wim/276118_332_41?hei=1092&wid=950&resMode=sharp2&defaultImage=llbprod/A0211793_2",
+      "image": "https://img.abercrombie.com/is/image/anf/KIC_140-2591-2449-420_prod1?policy=product-large",
       "category": "Tops",
       "description": "A sheer, flowy blouse with a button-down front.",
-      "color": "Pink"
+      "color": "Brown"
     },
     {
       "id": 34,
       "name": "Striped Tee",
       "price": 30,
-      "image": "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T43_3647_E4_X_EC_90?$Intl_PDP_Tab$",
+      "image": "https://img.abercrombie.com/is/image/anf/KIC_139-2342-1212-104_prod1?policy=product-large",
       "category": "Tops",
       "description": "A casual, striped tee made from breathable cotton.",
       "color": "Blue"
@@ -310,37 +310,37 @@
       "id": 35,
       "name": "Cropped Tank",
       "price": 22,
-      "image": "https://img.ltwebstatic.com/images3_pi/2021/05/13/1620871106db0342ef69bc108e6b2cea7ec4a36aea_thumbnail_900x.webp",
+      "image": "https://aritzia.scene7.com/is/image/Aritzia/s22_01_a03_66139_18906_off_a?wid=1200",
       "category": "Tops",
       "description": "A trendy, cropped tank top with a scoop neckline.",
-      "color": "Yellow"
+      "color": "Tan"
     },
     {
       "id": 36,
       "name": "Silk Cami",
       "price": 45,
-      "image": "https://img.staticdj.com/1ee9492f9663cb339f58b32430232317_1080x.jpeg",
+      "image": "https://aritzia.scene7.com/is/image/Aritzia/f22_02_a02_102906_3634_off_a?wid=1200",
       "category": "Tops",
       "description": "A luxurious, silk cami with spaghetti straps.",
-      "color": "Red"
+      "color": "White"
     },
     {
       "id": 37,
       "name": "Off-Shoulder Top",
       "price": 40,
-      "image": "https://img.ltwebstatic.com/images3_pi/2021/03/09/16152215437718104a3e452925489417d8417fc41a_thumbnail_900x.webp",
+      "image": "https://aritzia.scene7.com/is/image/Aritzia/s22_01_a03_98044_23843_off_a?wid=1200",
       "category": "Tops",
-      "description": "A stylish, off-shoulder top with ruffle trim.",
-      "color": "Green"
+      "description": "A stylish, off-shoulder top with fitted bodice.",
+      "color": "Blue"
     },
     {
       "id": 38,
-      "name": "Sleeveless Blouse",
+      "name": "Mock Neck Top",
       "price": 38,
-      "image": "https://i.ebayimg.com/images/g/7uIAAOSwxqpis-VD/s-l1600.jpg",
+      "image": "https://aritzia.scene7.com/is/image/Aritzia/f22_01_a01_101201_27357_off_a?wid=1200",
       "category": "Tops",
-      "description": "A versatile, sleeveless blouse with a collar.",
-      "color": "Orange"
+      "description": "A versatile, sleeveless top with a mock neck.",
+      "color": "Green"
     },
     {
       "id": 39,
@@ -355,7 +355,7 @@
       "id": 40,
       "name": "Peplum Top",
       "price": 35,
-      "image": "https://img.ltwebstatic.com/images3_pi/2021/12/14/1639447482221dde131b92b16afc0160458f66ff53_thumbnail_900x.webp",
+      "image": "https://cdn.shopify.com/s/files/1/0932/1794/products/HHH988_PazTop_LilacStripe_A_1394x.jpg?v=1657658909",
       "category": "Tops",
       "description": "A feminine, peplum top with a keyhole back.",
       "color": "Purple"

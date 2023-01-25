@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Item from './Item';
-
+import { Container, Col, Row } from 'react-bootstrap';
 
 export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
@@ -22,10 +22,11 @@ export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartI
   )
   
   return (
-    <div>
+    <Container>
+      <Row>
         <h1>Item List</h1>
         {isWindowShop? itemCards[index] : itemCards }
-        
-    </div>
+      </Row>
+    </Container>
   )
 }
