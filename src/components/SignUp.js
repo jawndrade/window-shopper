@@ -40,9 +40,9 @@ export default function SignUp({ setCurrentUser}) {
                 "email": formData.email,
                 "password": formData.password,
                 "gender": formData.gender,
-                "likes": [],
-                "dislikes": [],
-                "inCart": []
+                "likes": {},
+                "dislikes": {},
+                "inCart": {}
         };
 
         //Check to see if user email already exists 
