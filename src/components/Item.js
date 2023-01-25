@@ -117,10 +117,14 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
   //add to likes
   const onAddToLikes = (item) => {
+    const dislikedCheck = dislikedItems.find((item) => item.name === name)
     const yourLikedItems = likedItems.find((liked) => liked.id === item.id)
     if (isWindowShop === true) {
       setIndex(prev => prev + 1);
       setIsLiked(true);
+      if (dislikedCheck !== undefined){
+      const newDislikes = dislikedItems.filter((item) => item.name !== name)
+      setDislikedItems(newDislikes)}
       if (yourLikedItems) {
         const newLikedItems = likedItems.map((liked) => 
         liked.id === item.id ? {...yourLikedItems, item} : liked
@@ -135,6 +139,12 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     }
     else {
       setIsLiked(true);
+      const dislikedCheck = dislikedItems.find((item) => item.name === name)
+      if (dislikedCheck !== undefined){
+        const newDislikes = dislikedItems.filter((item) => item.name !== name)
+        setDislikedItems(newDislikes)
+        handleUserPatch("dislikes", [...newDislikes])
+      }
       if (isDisliked) {
         setIsDisliked(false);
       }
@@ -155,6 +165,11 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
  
  const onAddToDislikes = (item) => {
+  const likedCheck = likedItems.find((item) => item.name === name)
+  if (likedCheck !== undefined){
+    const newLikes = likedItems.filter((item) => item.name !== name)
+    setLikedItems(newLikes)}
+
   const yourDislikedItems = dislikedItems.find((disliked) => disliked.id === item.id)
   if (isWindowShop === true) {
     setIndex(prev => prev + 1);
@@ -175,6 +190,10 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     }
   }
   else {
+    if(likedCheck !== undefined){
+      const newLikes = likedItems.filter((item) => item.name !== name)
+      setLikedItems(newLikes)
+      handleUserPatch("likes",[...newLikes])}
     if (yourDislikedItems) {
       const newDislikedItems = dislikedItems.map((disliked) => 
       disliked.id === item.id ? {...yourDislikedItems, item} : disliked
