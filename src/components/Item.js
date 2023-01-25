@@ -17,33 +17,38 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
     const front = 
       <>
-        <Card border="dark" style={{ width: '18rem' }}>
+        <Card border="dark" style={{ width: '19rem' }}>
           <Card.Img variant="top" src={image} onClick={handleFlip}/>
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Button variant="dark" onClick={() => onAddToCart(item)}>Add to Cart</Button>
             <Card.Text>Price: ${price}</Card.Text>
-            <ButtonToolbar className="mb-2">
-              <Button variant="dark" onClick={() => onAddToLikes(item)}>Like</Button>
-              <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
-            </ButtonToolbar>
+            <div class="container">
+              <div class="row">
+                <div class="col-3">
+                  <Button variant="dark" onClick={() => onAddToLikes(item)}>Like</Button></div>
+                <div class="col-3">
+                  <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
+                </div>
+              </div>
+            </div>
           </Card.Body>
         </Card>
       </>
 
   const back = 
     <>
-      <Card border="dark" style={{ width: '18rem' }}>
+      <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
         <Card.Title onClick={handleFlip}>{name}</Card.Title>
         <Card.Subtitle>Price: ${price}</Card.Subtitle>
         <Card.Text>
           {description}
         </Card.Text>
         <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
-        <Button variant="dark" onClick={() => onAddToCart(item)}>Add to Cart</Button>
+        <Button variant="dark" className="mb-2" onClick={() => onAddToCart(item)}>Add to Cart</Button>
         <ButtonToolbar className="mb-2">
-          <Button variant="dark" onClick={() => onAddToLikes(item)}>Like</Button>
-          <Button variant="dark" onClick={() => onAddToDislikes(item)}>Dislike</Button>
+          <Button variant="dark" className="mb-2" onClick={() => onAddToLikes(item)}>Like</Button>
+          <Button variant="dark" className="mb-2" onClick={() => onAddToDislikes(item)}>Dislike</Button>
         </ButtonToolbar>
       </Card>
     </>

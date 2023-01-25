@@ -5,6 +5,7 @@ import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 import Spotify from "react-spotify-embed";
+import { Button } from 'react-bootstrap';
 
 
 export default function Shop({itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems}) {
@@ -35,10 +36,10 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
         <Header/>
         <h1>Shop</h1>
         {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
-        <button name="spotify" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+        <Button name="spotify" class="btn btn-dark" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</Button>
         <div>
             <div>
-                <Link to='/windowshop'><button>Toggle Window Shop</button></Link>
+                <Link to='/windowshop'><Button class="btn btn-dark">Toggle Window Shop</Button></Link>
             </div>
 
             <div> 
