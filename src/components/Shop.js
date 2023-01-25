@@ -8,7 +8,7 @@ import Spotify from "react-spotify-embed";
 import { Button } from 'react-bootstrap';
 
 
-export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
+export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser, handleDarkMode, isDarkMode}) {
   const [musicShowing, setMusicShowing] = useState(true)
   const [searchItem, setSearchItem] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -35,7 +35,10 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
     //------------------->TODO: Handle Category Filter onChange || Styling  <------------------
   return (
     <>
-        <Header/>
+        <Header
+            handleDarkMode={handleDarkMode}
+            isDarkMode={isDarkMode}
+        />
         <h1>Shop</h1>
         {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
         <Button name="spotify" class="btn btn-outline-dark" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</Button>

@@ -8,8 +8,7 @@
   --heading-color: #5c737b;
 }
 
-/* dark mode */
-[data-theme="dark"] {
+.AppDark {
   --primary-color: #f0f5fe;
   --secondary-color: #d9e7fe;
   --font-color: #3e5f95;

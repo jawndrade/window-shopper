@@ -34,12 +34,18 @@ function App() {
   setItemList([...itemList, newItem])
 }
 
-  //Dark Mode
+//Dark Mode
   function handleDarkMode() {
     setDarkMode(prev => !prev);
+    toggleDarkMode()
+  }
+  
+  function toggleDarkMode() {
+    isDarkMode ? document.body.classList.remove("AppDark") : document.body.classList.add("AppDark")
   }
 
   return (
+    <div>
       <Routes>
         <Route 
           path="/" 
@@ -53,6 +59,8 @@ function App() {
           path="/shop" 
           element={(
           <Shop 
+              handleDarkMode={handleDarkMode}
+              isDarkMode={isDarkMode}
               isWindowShop={isWindowShop}
               setIsWindowShop={setIsWindowShop}
               itemList={itemList} 
@@ -73,19 +81,25 @@ function App() {
           element={<Likes likedItems={likedItems} 
           setLikedItems={setLikedItems} 
           dislikedItems={dislikedItems} 
-          setDislikedItems={setDislikedItems}/>}
+          setDislikedItems={setDislikedItems}
+          handleDarkMode={handleDarkMode}
+          isDarkMode={isDarkMode}/>}
+          
         />
         <Route 
           path="/cart"
-          element={<Cart cartItems={cartItems} setCartItems={setCartItems} currentUser={currentUser}/>}
+          element={<Cart cartItems={cartItems} setCartItems={setCartItems} currentUser={currentUser}handleDarkMode={handleDarkMode}isDarkMode={isDarkMode}/>}
         />
         <Route
           path="/addItem"
-          element={<AddItem handleAddItem={handleAddItem}/>}
+          element={<AddItem handleAddItem={handleAddItem}handleDarkMode={handleDarkMode}isDarkMode={isDarkMode}
+          />}
         />
         <Route
           path="/windowshop"
           element={<WindowShop
+              handleDarkMode={handleDarkMode}
+              isDarkMode={isDarkMode}
               isWindowShop={isWindowShop}
               setIsWindowShop={setIsWindowShop}
               itemList={itemList}
@@ -102,6 +116,7 @@ function App() {
           />}
         />
       </Routes>
+    </div>
   );
 }
 

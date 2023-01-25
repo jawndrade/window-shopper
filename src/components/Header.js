@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, useNavigate } from "react-router-dom";
 import { Nav, Navbar, Container, Button } from 'react-bootstrap';
 
-export default function Header() {
+export default function Header({handleDarkMode, isDarkMode}) {
 
   const navigate = useNavigate();
 const handleBackToShop = () => {
@@ -14,7 +14,7 @@ const handleBackToShop = () => {
         <Container>
           <Navbar.Brand class="navbar-brand mb-0 h1" onClick={handleBackToShop}>WindowShopper</Navbar.Brand>
           <Nav className="ms-auto">
-            <Button class="btn btn-light">Toggle Dark Mode</Button>
+            <Button class="btn btn-light"onClick={handleDarkMode}>{isDarkMode ? "Light Mode" : "Dark Mode"}</Button>
             <NavLink to="/shop"><Button class="btn btn-light">Shop</Button></NavLink>
             <NavLink to='/addItem'><Button class="btn btn-light">List An Item</Button></NavLink>
             <NavLink to="/likes"><Button class="btn btn-light">Likes/Dislikes</Button></NavLink>

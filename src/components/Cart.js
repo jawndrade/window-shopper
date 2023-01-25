@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Item from './Item';
 
-export default function Cart({cartItems, setCartItems, onAdd, onRemove, currentUser}) {
+export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItems, onAdd, onRemove, currentUser}) {
 
   const totalPrice = cartItems.reduce((total, item) => item.price + total , 0)
 
@@ -34,7 +34,10 @@ export default function Cart({cartItems, setCartItems, onAdd, onRemove, currentU
 
   return (
     <>
-        <Header/>
+        <Header
+          handleDarkMode={handleDarkMode}
+          isDarkMode={isDarkMode}
+        />
         <h2>Cart Items</h2>
         <h3>Total: ${totalPrice}</h3>
         {itemsToShow}

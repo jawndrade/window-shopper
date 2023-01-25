@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from './Header';
 
-export default function AddItem({handleAddItem}) {
+export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
   const navigate = useNavigate();
   const initialData = {
     name: "",
@@ -50,7 +50,10 @@ export default function AddItem({handleAddItem}) {
   //TODO: POST New Item to DB.json || Redirect to SHOP onSubmit
   return (
     <>
-        <Header/>
+        <Header
+          handleDarkMode={handleDarkMode}
+          isDarkMode={isDarkMode}
+        />
         <h1>List Item</h1>
         <form onSubmit={handleSubmit}>
             <input 
