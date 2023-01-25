@@ -1,12 +1,380 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "password": "12345",
+      "gender": "Male",
+      "likes": [],
+      "dislikes": [],
+      "inCart": []
+    }
+  ],
   "items": [
+    {
+      "id":2,
+      "name":"Denim Jacket",
+      "price":75,
+      "image":"https://static.zara.net/photos///2022/I/0/2/p/5575/310/400/2/w/750/5575310400_6_1_1.jpg?ts=1662712313516",
+      "category":"Jackets",
+      "description":"A light blue, distressed denim jacket with button closures.",
+      "color":"light blue"
+    },
+    {
+      "id":35,
+       "name":"Cropped Tank",
+       "price":22,
+       "image":"https://aritzia.scene7.com/is/image/Aritzia/s22_01_a03_66139_18906_off_a?wid=1200",
+       "category":"Tops",
+       "description":"A trendy, cropped tank top with a scoop neckline.",
+       "color":"Tan"
+    },
+    {
+      "id":29,
+      "name":"Levi's 501 Original Frayed Jean Shorts","price":35,"image":"https://www.tradeinn.com/f/13737/137379033_3/levis---501-original-denim-shorts.jpg",
+      "category":"bottoms",
+      "description":"A cultural icon, Levi's brought us the first-ever jean shorts, and these now feature a waist-defining high rise, which will have you looking stunning.",
+      "color":"Blue"
+    },
+    {
+      "id":20,
+      "name":"Thursday Boot Co. Boot",
+      "price":125,
+      "image":"https://cdn.shopify.com/s/files/1/0419/1525/products/T-1024x1024-Men-Captain-Arizona-LB1_480x480.jpg?v=1569061198",
+      "category":"shoes",
+      "description":"The Rugged & Resilient matte leather upper, sourced exclusively from Tier 1 USA cattle hides, was custom created to look great with years of hard wear and minimal care.",
+      "color":"Brown"
+    },
+    {
+      "id":38,
+      "name":"Mock Neck Top",
+      "price":38,
+      "image":"https://aritzia.scene7.com/is/image/Aritzia/f22_01_a01_101201_27357_off_a?wid=1200",
+      "category":"Tops",
+      "description":"A versatile, sleeveless top with a mock neck.","color":"Green"
+    },
+    {
+      "id":22,
+      "name":"Wrangler's Competition Active Flex Relaxed Fit Jean",
+      "price":50,
+      "image":"https://images.wrangler.com/is/image/Wrangler/01MCWBL-HERO?$KDP-XXLARGE$",
+      "category":"bottoms",
+      "description":"When you need nothing but the best denim on your side, no jean can compare to a Wrangler Competition Slim Jean with Active Flex",
+      "color":"Blue"
+    },
+    {
+      "id":24,
+      "name":"Nike Dri-FIT Men's Running Pants",
+      "price":60,
+      "image":"https://static.nike.com/a/images/t_default/e9c97fc6-1ad7-460e-b52d-a46051265c75/dri-fit-challenger-mens-woven-running-pants-VwT2cP.png",
+      "category":"bottoms",
+      "description":"The Nike Dri-FIT Men's Running Pants are a comfortable and moisture-wicking running pant.",
+      "color":"Black"
+    },
+    {
+      "id":12,
+      "name":"Adidas Ultraboost 21",
+      "price":180,
+      "image":"https://media.finishline.com/i/finishline/FY0378_001_P2?$default$&w=670&h=670&bg=rgb(237,237,237)",
+      "category":"shoes",
+      "description":"The Adidas Ultraboost 21 is a high-performance running shoe with a responsive cushioning system.",
+      "color":"White/Black"
+    },
+    {
+      "id":25,
+      "name":"H&M Slim Fit Chinos",
+      "price":35,
+      "image":"https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fb0%2F65%2Fb065f6a01d74e56d6230cade5b7ffd5788268a8e.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+      "category":"bottoms",
+      "description":"The H&M Slim Fit Chinos are a stylish and comfortable slim fit chino made with a cotton blend.",
+      "color":"Beige"
+    },
+    {
+      "id":13,
+      "name":"Converse Chuck Taylor All Star",
+      "price":60,
+      "image":"https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw98db472f/images/a_08/560845C_A_08X1.jpg?sw=406",
+      "category":"shoes",
+      "description":"The Converse Chuck Taylor All Star is a classic casual shoe with a durable canvas upper.",
+      "color":"Black"
+    },
+    {
+      "id":23,
+      "name":"Todd Snyder Straigh Fit 5-Pocket Chino Pant",
+      "price":150,
+      "image":"https://cdn.shopify.com/s/files/1/0186/1574/products/JE037785-DarkGranite_b72c47ea-74ff-498a-b9ba-07c5a3b1db0b_1200x.jpg?v=1600480458",
+      "category":"bottoms",
+      "description":"A new fit for our most popular pants that merges the best features of your favorite denim and your trusty chinos into one truly perfect pair of pants.",
+      "color":"Gray"
+    },
+    {
+      "id":6,
+      "name":"Puffer Jacket",
+      "price":130,
+      "image":"https://static.zara.net/photos///2023/V/0/1/p/3427/884/707/2/w/1024/3427884707_6_1_1.jpg?ts=1672747278246",
+      "category":"Jackets",
+      "description":"A tan, insulated puffer jacket with a hood.",
+      "color":"tan"
+    },
+    {
+      "id":34,
+      "name":"Striped Tee",
+      "price":30,"image":"https://img.abercrombie.com/is/image/anf/KIC_139-2342-1212-104_prod1?policy=product-large",
+      "category":"Tops",
+      "description":"A casual, striped tee made from breathable cotton.",
+      "color":"Blue"
+    },
+    {
+      "id":31,
+      "name":"Basic Tee",
+      "price":20,
+      "category":"Tops",
+      "image":"https://img.abercrombie.com/is/image/anf/KIC_139-3188-1260-112_prod1?policy=product-large",
+      "description":"A classic, comfortable tee made from 100% cotton.",
+      "color":"Gray"
+    },
+    {
+      "id":14,
+      "name":"Vans Old Skool",
+      "price":65,
+      "image":"https://images.vans.com/is/image/Vans/VN000D3HW00-HERO?wid=1600&hei=1600&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.7,8,0&bgc=e5e5e9",
+      "category":"shoes",
+      "description":"The Vans Old Skool is a classic skate shoe with a durable canvas and suede upper.",
+      "color":"White"
+    },
+    {
+      "id":11,
+      "name":"Nike Air Zoom Pegasus 38",
+      "price":120,
+      "image":"https://static.nike.com/a/images/t_default/d38468a0-f3bc-4e13-9a85-18450f7173dd/pegasus-38-mens-road-running-shoes-lq7PZZ.png",
+      "category":"shoes",
+      "description":"The Nike Air Zoom Pegasus 38 is a reliable running shoe designed for everyday training.",
+      "color":"Black/White"
+    },
+    {
+      "id":1,
+      "name":"Leather Jacket",
+      "price":150,
+      "image":"https://static.zara.net/photos///2021/I/0/1/p/3046/636/800/2/w/850/3046636800_6_1_1.jpg?ts=1632741057228",
+      "category":"Jackets",
+      "description":"A classic, black leather jacket.",
+      "color":"black"
+    },
+    {
+      "id":26,
+      "name":"Brooks Moment 5in. Running Shorts",
+      "price":40,
+      "image":"https://www.brooksrunning.com/dw/image/v2/BGPF_PRD/on/demandware.static/-/Sites-brooks-master-catalog/default/dw41987f24/original/211427/211427-442-lf-moment-5-inch-short-mens-running-shorts.jpg?sw=868&sh=868&sm=fit&sfrm=png&bgcolor=F1F3F6",
+      "category":"bottoms",
+      "description":"Get running shorts that make your legs feel great. Stretch fabric, a comfortable liner, and a convenient pocket make the Moment 5in. Short an item you'll grab again and again.",
+      "color":"Black"
+    },
+    {
+      "id":17,
+      "name":"Nike Kyrie 7",
+      "price":130,
+      "image":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQmB6PYh4YfhY7u6fPQW_k9l_S4z9WhCyE68DeB9X98HJ-F83kODnkQgVIIUiXUja_KZUZXqApweUoeKn5xWy7eNmmRcNECFA&usqp=CAY",
+      "category":"shoes",
+      "description":"The Nike Kyrie 7 is a high-performance basketball shoe designed for quick cuts and fast moves.",
+      "color":"White/Blue"
+    },
+    {
+      "id":40,
+      "name":"Peplum Top",
+      "price":35,
+      "image":"https://cdn.shopify.com/s/files/1/0932/1794/products/HHH988_PazTop_LilacStripe_A_1394x.jpg?v=1657658909",
+      "category":"Tops",
+      "description":"A feminine, peplum top with a keyhole back.",
+      "color":"Purple"
+    },
+    {
+      "id":9,
+      "name":"Peacoat",
+      "price":130,
+      "image":"https://cdni.llbean.net/is/image/wim/260345_74_41?hei=1092&wid=950&resMode=sharp2&defaultImage=llbprod/A0211793_2",
+      "category":"Jackets",
+      "description":"A navy blue, double-breasted peacoat with button closures.",
+      "color":"navy blue"
+    },
+    {
+      "id":32,
+      "name":"Fitted Tank",
+      "price":25,
+      "image":"https://aritzia.scene7.com/is/image/Aritzia/s23_02_a01_78462_7640_off_a?wid=1200",
+      "category":"Tops",
+      "description":"A slim-fit tank top made from a soft, stretchy material.",
+      "color":"Gray"
+    },
+    {
+      "id":7,
+      "name":"Raincoat",
+      "price":70,
+      "image":"https://static.zara.net/photos///2022/I/0/3/p/5475/703/800/2/w/1024/5475703800_6_1_1.jpg?ts=1664782895084",
+      "category":"Jackets",
+      "description":"A green, waterproof raincoat with a hood.",
+      "color":"green"
+    },
+    {
+      "id":19,
+      "name":"Dr. Martens 1460",
+      "price":150,
+      "image":"https://images.journeys.com/images/products/1_74888_ZM_THERO.JPG",
+      "category":"shoes",
+      "description":"The Dr. Martens 1460 is a durable work boot with a leather upper and Goodyear welt construction.",
+      "color":"Black"
+    },
+    {
+      "id":36,
+      "name":"Silk Cami",
+      "price":45,
+      "image":"https://aritzia.scene7.com/is/image/Aritzia/f22_02_a02_102906_3634_off_a?wid=1200",
+      "category":"Tops",
+      "description":"A luxurious, silk cami with spaghetti straps.",
+      "color":"White"
+    },
+    {
+      "id":21,
+      "name":"Levi's 501 Original Fit Jeans",
+      "price":70,
+      "image":"https://m.media-amazon.com/images/I/913fQp-qCNL._AC_UF1000,1000_QL80_.jpg",
+      "category":"bottoms",
+      "description":"The Levi's 501 Original Fit Jeans are a classic straight leg jean made with non-stretch denim.",
+      "color":"Blue"
+    },
+    {
+      "id":33,
+      "name":"Chiffon Blouse",
+      "price":35,
+      "image":"https://img.abercrombie.com/is/image/anf/KIC_140-2591-2449-420_prod1?policy=product-large",
+      "category":"Tops",
+      "description":"A sheer, flowy blouse with a button-down front.",
+      "color":"Brown"
+    },
+    {
+      "id":30,
+      "name":"Everlane Organic Wide-Leg Pant",
+      "price":100,
+      "image":"https://media.everlane.com/image/upload/c_fill,w_750,ar_807:807,q_auto,dpr_1.0,g_face:center,f_auto,fl_progressive:steep/i/6836e483_1d9d",
+      "category":"bottoms",
+      "description":"Featuring the same waist-nipping, butt-boosting, and leg-lengthening look you love from the original Wide-Leg Crop Pant—now in organic cotton. Soft. Breathable. Gentler on you and the planet.",
+      "color":"Green"
+    },
+    {
+      "id":39,
+      "name":"V-Neck Tee",
+      "price":25,
+      "image":"https://images.express.com/is/image/expressfashion/0036_05051954_0086_f?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+      "category":"Tops",
+      "description":"A relaxed, v-neck tee with short sleeves.",
+      "color":"Gray"
+    },
+    {
+      "id":3,
+      "name":"Parka",
+      "price":120,
+      "image":"https://static.zara.net/photos///2023/V/0/2/p/3918/406/505/2/w/750/3918406505_6_1_1.jpg?ts=1669648695704",
+      "category":"Jackets",
+      "description":"A green, insulated parka with a fur-trimmed hood.",
+      "color":"green"
+    },
+    {
+      "id":28,
+      "name":"adidas Tiro 19 Training Pants",
+      "price":50,"image":"https://cdn.shopify.com/s/files/1/0111/7333/1040/products/Tiro_19_Training_Pants_Grey_DZ6168_01_laydown.jpg?v=1669427701",
+      "category":"bottoms",
+      "description":"The adidas Tiro 19 Training Pants are a comfortable and moisture-wicking training pant.",
+      "color":"Black"
+    },
+    {
+      "id":5,
+      "name":"Trench Coat",
+      "price":200,
+      "image":"https://static.zara.net/photos///2023/V/0/1/p/3811/040/450/2/w/1024/3811040450_6_1_1.jpg?ts=1674040695504",
+      "category":"Jackets",
+      "description":"A beige, double-breasted trench coat with a belt.",
+      "color":"beige"
+    },
+    {
+      "id":8,
+      "name":"Suede Jacket",
+      "price":160,
+      "image":"https://img.abercrombie.com/is/image/anf/KIC_144-1071-1168-401_prod1?policy=product-large",
+      "category":"Jackets",
+      "description":"A brown, suede jacket.",
+      "color":"brown"
+    },
+    {
+      "id":27,
+      "name":"Carhartt Bib Overalls",
+      "price":70,
+      "image":"https://cdn.shopify.com/s/files/1/0073/1797/9225/products/228740_silo_brown_800x800.jpg?v=1569383458",
+      "category":"bottoms",
+      "description":"The Carhartt® Crawford Double-Front Bib Overalls were built for rough and tough days. Rugged Flex® technology moves with you for all-day comfort and style, while the multi-compartment bib pocket with zip closure organizes and stores essentials. ",
+      "color":"Brown"
+    },
+    {
+      "id":16,
+      "name":"Jordan 1 Mid",
+      "price":110,
+      "image":"https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0e7fc8f3-76b7-4631-b147-4dad4b1ff241/air-jordan-1-mid-shoes-X5pM09.png",
+      "category":"shoes",
+      "description":"The Jordan 1 Mid is a classic basketball shoe featuring a leather upper and Air-Sole unit.",
+      "color":"Black/Red"
+    },
+    {
+      "id":15,
+      "name":"Puma Cali Sport",
+      "price":90,
+      "image":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1750,h_1750/global/387888/03/sv01/fnd/PNA/fmt/png/Cali-Dream-Leather-Sneakers-Big-Kids",
+      "category":"shoes",
+      "description":"The Puma Cali Sport is a stylish and comfortable casual shoe with a suede upper.",
+      "color":"White"
+    },
+    {
+      "id":18,
+      "name":"Timberland Premium Boot",
+      "price":200,
+      "image":"https://images.dsw.com/is/image/DSWShoes/308527_001_ss_01?impolicy=qlt-medium-high&imwidth=640&imdensity=2",
+      "category":"shoes",
+      "description":"The Timberland 6-Inch Premium Boot is a durable work boot with a waterproof leather upper.",
+      "color":"Black"
+    },
+    {
+      "id":37,
+      "name":"Off-Shoulder Top",
+      "price":40,
+      "image":"https://aritzia.scene7.com/is/image/Aritzia/s22_01_a03_98044_23843_off_a?wid=1200",
+      "category":"Tops",
+      "description":"A stylish, off-shoulder top with fitted bodice.",
+      "color":"Blue"
+    },
+    {
+      "id":4,
+      "name":"Bomber Jacket",
+      "price":90,
+      "image":"http://cache.mrporter.com/variants/images/32027475400169568/in/w2000_q60.jpg",
+      "category":"Jackets",
+      "description":"A black, ribbed bomber jacket with a zip-up front.",
+      "color":"black"
+    },
+    {
+      "id":10,
+      "name":"Varsity Jacket",
+      "price":100,
+      "image":"https://img.abercrombie.com/is/image/anf/KIC_132-3137-1773-408_prod1?policy=product-large",
+      "category":"Jackets",
+      "description":"A revamped take on a classic varsity jacket in a soft faux suede fabric and relaxed-fit silhouette.",
+      "color":"tan"
+    }
+  ],   "itemsInOrder": [
     {
       "id": 1,
       "name": "Leather Jacket",
       "price": 150,
       "image": "https://static.zara.net/photos///2021/I/0/1/p/3046/636/800/2/w/850/3046636800_6_1_1.jpg?ts=1632741057228",
       "category": "Jackets",
-      "description": "A classic, black leather jacket with silver hardware.",
+      "description": "A classic, black leather jacket.",
       "color": "black"
     },
     {
@@ -359,18 +727,6 @@
       "category": "Tops",
       "description": "A feminine, peplum top with a keyhole back.",
       "color": "Purple"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "email": "john@gmail.com",
-      "password": "12345",
-      "gender": "Male",
-      "likes": [],
-      "dislikes": [],
-      "inCart": []
     }
   ]
 }
