@@ -44,6 +44,11 @@ h4 {
   color: var(--primary-color);
 }
 
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--secondary-color),var(--bs-bg-opacity))!important;
+}
+
 label {
   color: var(--secondary-color);
 }

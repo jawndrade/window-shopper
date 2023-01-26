@@ -5,20 +5,21 @@ import { Nav, Navbar, Container, Button } from 'react-bootstrap';
 export default function Header({handleDarkMode, isDarkMode}) {
 
   const navigate = useNavigate();
-const handleBackToShop = () => {
-  navigate("/shop");
+  const handleBackToShop = () => {
+    navigate("/shop");
 }
+
   return (
     <>
-      <Navbar bg="light" variant="light" expand="sm">
+      <Navbar class="sticky-top" bg="light" variant="light" expand="sm">
         <Container>
-          <Navbar.Brand class="navbar-brand mb-0 h1" onClick={handleBackToShop}>WindowShopper</Navbar.Brand>
-          <Nav className="ms-auto">
-            <Button class="btn btn-light"onClick={handleDarkMode}>{isDarkMode ? "Light Mode" : "Dark Mode"}</Button>
-            <NavLink to="/shop"><Button class="btn btn-light">Shop</Button></NavLink>
-            <NavLink to='/addItem'><Button class="btn btn-light">List An Item</Button></NavLink>
-            <NavLink to="/likes"><Button class="btn btn-light">Likes/Dislikes</Button></NavLink>
-            <NavLink to="/cart"><Button class="btn btn-light">Cart</Button></NavLink>
+          <Navbar.Brand onClick={handleBackToShop}>WindowShopper</Navbar.Brand>
+          <Nav className="ms-auto" pullRight>
+            <button class="btn btn-dark me-2" onClick={handleDarkMode}>{isDarkMode ? "Light Mode" : "Dark Mode"}</button>
+            <NavLink to="/shop"><button class="btn btn-dark me-2">Shop</button></NavLink>
+            <NavLink to='/addItem'><button class="btn btn-dark me-2">List An Item</button></NavLink>
+            <NavLink to="/likes"><button class="btn btn-dark me-2">Likes/Dislikes</button></NavLink>
+            <NavLink to="/cart"><button class="btn btn-dark">Cart</button></NavLink>
           </Nav>
         </Container>
       </Navbar>
