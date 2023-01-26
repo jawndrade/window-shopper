@@ -8,7 +8,6 @@ import Likes from "./components/Likes";
 import Cart from "./components/Cart";
 import AddItem from "./components/AddItem";
 import WindowShop from './components/WindowShop';
-// import Header from './components/Header';
 
 function App() {
 
@@ -39,7 +38,8 @@ function App() {
     setDarkMode(prev => !prev);
     toggleDarkMode()
   }
-  
+
+  // Function Toggle Class For Dark Mode
   function toggleDarkMode() {
     isDarkMode ? document.body.classList.remove("AppDark") : document.body.classList.add("AppDark")
   }
@@ -49,11 +49,11 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<Login setCurrentUser={setCurrentUser} setCartItems={setCartItems}/>}
+          element={<Login setCurrentUser={setCurrentUser} setCartItems={setCartItems} setLikedItems={setLikedItems} setDislikedItems={setDislikedItems}/>}
         />
         <Route 
           path="/signup" 
-          element={<SignUp setCurrentUser={setCurrentUser} setCartItems={setCartItems} />}
+          element={<SignUp setCurrentUser={setCurrentUser}/>}
         />
         <Route 
           path="/shop" 
@@ -83,16 +83,34 @@ function App() {
           dislikedItems={dislikedItems} 
           setDislikedItems={setDislikedItems}
           handleDarkMode={handleDarkMode}
-          isDarkMode={isDarkMode}/>}
+          isDarkMode={isDarkMode}
+          currentUser={currentUser}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          />}
+
           
         />
         <Route 
           path="/cart"
-          element={<Cart cartItems={cartItems} setCartItems={setCartItems} currentUser={currentUser}handleDarkMode={handleDarkMode}isDarkMode={isDarkMode}/>}
+          element={<Cart 
+            cartItems={cartItems} 
+            setCartItems={setCartItems} 
+            currentUser={currentUser}
+            handleDarkMode={handleDarkMode}
+            isDarkMode={isDarkMode}
+            likedItems={likedItems}
+            setLikedItems={setLikedItems}
+            dislikedItems={dislikedItems}
+            setDislikedItems={setDislikedItems}
+          />}
         />
         <Route
           path="/addItem"
-          element={<AddItem handleAddItem={handleAddItem}handleDarkMode={handleDarkMode}isDarkMode={isDarkMode}
+          element={<AddItem 
+            handleAddItem={handleAddItem}
+            handleDarkMode={handleDarkMode}
+            isDarkMode={isDarkMode}
           />}
         />
         <Route

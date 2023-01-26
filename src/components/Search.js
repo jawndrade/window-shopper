@@ -3,6 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 
 export default function Search({searchItem, onChangeSearch}) {
 
+  // on Input Change helper function
   const handleChange = (e) => {
     onChangeSearch(e.target.value)
   }

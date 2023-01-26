@@ -3,8 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Nav, Navbar, Container } from 'react-bootstrap';
 
 export default function Header({handleDarkMode, isDarkMode}) {
-
+  
+  // Allow for use of useNavigate
   const navigate = useNavigate();
+
+  // Handle Back to shop click -> Navigate to /Shop
   const handleBackToShop = () => {
     navigate("/shop");
 }
