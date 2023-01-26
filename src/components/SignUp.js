@@ -70,26 +70,59 @@ export default function SignUp({ setCurrentUser}) {
     }
     return (
         <>
-            <div>
+            <div class="container">
+                <br/>
                 <h1>WindowShopper</h1>
-            </div>
-            <Link to='/'><button>Return To Login</button></Link>
-
-            <form onSubmit={handleSignUp}>
-                <input name="name" onChange={handleChange} type="text" placeholder="Name" value={formData.name} required />
-                <input name="email" onChange={handleChange} type="text" placeholder="Email" value={formData.email} required />
-                <input name="password" onChange={handleChange} type="text" placeholder="Password" value={formData.password} required />
-
+                <br/>
+            <Link to='/'><Button class="btn btn-dark" id="custom">Return To Login</Button></Link>
+                <br/>
+                <br/>
+                <Form onSubmit={handleSignUp}>
+                    <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridSignUpName">
+                            <Form.Label>Name</Form.Label>
+                                <Form.Control
+                                    name="name"
+                                    onChange={handleChange}
+                                    type="text"
+                                    placeholder="Name"
+                                    value={formData.name}
+                                    required />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridSignUpEmail">
+                            <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    name="email"
+                                    onChange={handleChange}
+                                    type="text"
+                                    placeholder="Email"
+                                    value={formData.email}
+                                    required />
+                            </Form.Group>
+                            <Form.Group as={Col} controlId="formGridSignUpPassword">
+                                <Form.Label>Password</Form.Label>
+                                    <Form.Control
+                                    name="password"
+                                    onChange={handleChange}
+                                    type="text"
+                                    placeholder="Password"
+                                    value={formData.password}
+                                    required />
+                            </Form.Group>
+                            <br/>
+                            <br/>
                 <label for="gender">Gender:</label>
-
-                <select onChange={handleChange} name="gender" id="gender" value={formData.gender} required>
+                <br/>
+                    <select onChange={handleChange} name="gender" id="gender" value={formData.gender} required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="No Preference">Prefer Not To Say</option>
                 </select>
-
-                <button type="submit">Sign Up</button>
-            </form>
+                <br/>
+                </Row>
+                <Button class="btn btn-dark" id="custom" type="submit">Sign Up</Button>
+            </Form>
+            </div>
         </>
     )
 }
