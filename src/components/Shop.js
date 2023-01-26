@@ -39,9 +39,10 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
             handleDarkMode={handleDarkMode}
             isDarkMode={isDarkMode}
         />
-        <h1>Shop</h1>
-        {musicShowing ? <Spotify wide link="https://open.spotify.com/track/6wuR7kYZIlA7XbCidEO1Op?si=38693832ded24406"/> : null}
-        <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+        <div class="container" id="custom">
+        <h3>Shop</h3>
+            {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
+            <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
         <br />
         <br />
         <div>
@@ -82,6 +83,7 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
                     currentUser={currentUser}
                   />
             </div>
+        </div>
         </div>
     </>
   )

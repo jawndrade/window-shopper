@@ -41,11 +41,11 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
               isDarkMode={isDarkMode}
             />
             <h1>Window Shop</h1>
-            {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
-            <button name="spotify" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+            {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
+            <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
             <div>
               <div>
-                <Link to='/shop'><button>Toggle Window Shop</button></Link>
+                <Link to='/shop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
               </div>
             </div>
 
@@ -65,7 +65,6 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
                     <option value="Jackets">Jacket</option>
                 </select>
             </div>
-
             <ItemList
               isWindowShop={isWindowShop}
               setIsWindowShop={setIsWindowShop}
@@ -80,6 +79,8 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
               setIndex={setIndex}
               currentUser={currentUser}
             />
+          <br/>
+          <br/>
         </>
   )
 }

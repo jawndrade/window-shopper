@@ -23,7 +23,8 @@ export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartI
   
   return (
     <Container>
-        <h1>Item List</h1>
+        {/* <h1>Item List</h1> */}
+        <br/>
       <Row class="gx-5">
         {isWindowShop? itemCards[index] : itemCards }
       </Row>

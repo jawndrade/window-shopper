@@ -4,8 +4,8 @@
   --primary-color: #324e7a;
   --secondary-color: #4d77bb;
   --font-color: #3e5f95;
-  --bg-color: #white;
-  --heading-color: #5c737b;
+  --bg-color: white;
+  --heading-color: #d3ddee;
 }
 
 .AppDark {
@@ -13,7 +13,7 @@
   --secondary-color: #d9e7fe;
   --font-color: #3e5f95;
   --bg-color: #324e7a;
-  --heading-color: #5c737b;
+  --heading-color: #263a5c;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
+  background-color: var(--heading-color);
   color: var(--font-color);
 }
 
@@ -66,7 +66,7 @@ code {
 }
 
 #custom {
-  /* background-color: var(--heading-color); */
+  background-color: var(--heading-color);
   color: var(--primary-color);
 }
 
