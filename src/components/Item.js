@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart, BsHandThumbsDown, BsCartPlus } from "react-icons/bs";
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Tooltip, OverlayTrigger } from 'react-bootstrap'
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
 
@@ -46,6 +46,16 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     // const frontHover = <div>Click To View Description</div>
     // const backHover = <div>Click To View Item</div>
 
+    const renderTooltipFront = (props) => (
+      <Tooltip id="button-tooltip" {...props}>
+        Click To View Description
+      </Tooltip>)
+
+    const renderTooltipBack = (props) => (
+      <Tooltip id="button-tooltip" {...props}>
+        Click To View Image
+      </Tooltip>)
+
     const notInCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onAddToCart(item)}><BsCartPlus /></Button>
     const addMoreToCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></Button>
     const inCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></Button>
@@ -60,13 +70,19 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
       <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
         <div id={id}>
            {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
-          <Card.Img src={image} onClick={handleFlip} alt={description} />
+          <OverlayTrigger
+            placement="bottom"
+            delay={{ show: 250, hide: 400 }}
+            overlay={renderTooltipFront}
+          >
+            <Card.Img src={image} onClick={handleFlip} alt={description} />
+          </OverlayTrigger>
           {/* {displayToolTip? frontHover : null } */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
           <Card.Text>Price: ${price}</Card.Text>
-          <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-          <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
+          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
           {isInCart ? addMoreToCart : notInCart}
           {isInCart ? inCart : null}
         </Card.Body>
@@ -80,13 +96,20 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
         <div id={id} onClick={handleFlip}>
           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>
-            <Card.Title>{name}</Card.Title>
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderTooltipBack}
+            >
+              <Card.Title>{name}</Card.Title>
+            </OverlayTrigger>
             <Card.Subtitle>Price: ${price}</Card.Subtitle>
+            <br/>
             <Card.Text>{description}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
         {/* {displayToolTip? backHover: null} */}
-        <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-        <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
+        <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+        <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
         {isInCart ? addMoreToCart : notInCart}
               {isInCart ? inCart : null}
         </Card.Body>
