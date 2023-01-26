@@ -11,29 +11,31 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
     const [musicShowing, setMusicShowing] = useState(true)
     const [searchItem, setSearchItem] = useState("")
     const [selectedCategory, setSelectedCategory] = useState("All")
-  
+
+    // update window shop state to true when landing on /windowShop
     setIsWindowShop(true);
     
+    // onClick toggle state of MusicShowing
     const musicToggleClick = () => {
       setMusicShowing(prev => !prev)
     }
     
+    // filtered items based on search query
     const itemToDisplay = itemList.filter((item) =>
     item.name.toLowerCase().includes(searchItem.toLowerCase())
   )
   
+  // update state of selected category input
   const selectedCat = (e) => {
       setSelectedCategory(e.target.value)
   }
   
+  // display items based on filtered search and category selection
   const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
       if(selectedCategory === "All")return true
       return item.category === selectedCategory
   })
-
-    //fetch Item List so you dont have to load Shop module first when landing on windowshop module
       
-
   return (
         <>
             <Header
