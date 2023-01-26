@@ -23,7 +23,7 @@ export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItem
   //Display Filtered Items Along W/ Total Count In Cart Of Item
   const itemsToShow = filteredItems.map((item) => (
   <>
-    <div>Total {item.name}s in Cart: {counts[item.name]}</div>
+    <div>Total {item.name} in Cart: {counts[item.name]}</div>
     <Item 
       key={item.id}
       item={item}
