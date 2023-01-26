@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart, BsHandThumbsDown, BsCartPlus } from "react-icons/bs";
-import { Button, ButtonToolbar, Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
 
@@ -46,9 +46,9 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     // const frontHover = <div>Click To View Description</div>
     // const backHover = <div>Click To View Item</div>
 
-    const notInCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsCartPlus /></Button>
-    const addMoreToCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></Button>
-    const inCart = <Button class="btn btn-dark" onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></Button>
+    const notInCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onAddToCart(item)}><BsCartPlus /></Button>
+    const addMoreToCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></Button>
+    const inCart = <Button class="btn btn-dark" id="custom-btn" onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></Button>
 
     const filledHeart = <BsFillHeartFill/>
     const emptyHeart = <BsHeart/>
@@ -57,7 +57,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
     const front = 
     <>
-      <Card border="dark" style={{ width: '19rem' }}>
+      <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
         <div id={id}>
            {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Img src={image} onClick={handleFlip} alt={description} />
@@ -65,8 +65,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
           <Card.Body>
             <Card.Title>{name}</Card.Title>
           <Card.Text>Price: ${price}</Card.Text>
-          <Button class="btn btn-dark me-2" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-          <Button class="btn btn-dark me-2" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
+          <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+          <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
           {isInCart ? addMoreToCart : notInCart}
           {isInCart ? inCart : null}
         </Card.Body>
@@ -76,7 +76,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
 
   const back = 
     <>
-      <Card border="dark" style={{ width: '19rem' }}>
+      <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
         <div id={id} onClick={handleFlip}>
           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>
@@ -85,8 +85,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
             <Card.Text>{description}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
         {/* {displayToolTip? backHover: null} */}
-        <Button class="btn btn-dark me-2" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-        <Button class="btn btn-dark me-2" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
+        <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+        <Button class="btn btn-dark me-2" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
         {isInCart ? addMoreToCart : notInCart}
               {isInCart ? inCart : null}
         </Card.Body>
@@ -178,7 +178,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const yourDislikedItems = dislikedItems.find((disliked) => disliked.id === item.id)
   if (isWindowShop === true) {
     setIndex(prev => prev + 1);
-    setIsDisliked(true);
+    setIsDisliked(true)
+    setIsLiked(false)
     if (isLiked === true) {
       setIsLiked(false);
     }
@@ -195,6 +196,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     }
   }
   else {
+    setIsDisliked(true)
+    setIsLiked(false)
     if(likedCheck !== undefined){
       const newLikes = likedItems.filter((item) => item.name !== name)
       setLikedItems(newLikes)

@@ -134,7 +134,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               />
             </Form.Group>
             <br/>
-            <button class="btn btn-dark me-2" type="submit">List Item</button>
+            <button class="btn btn-dark me-2" id="custom-btn" type="submit">List Item</button>
         </Form>
       </div>
     </>
