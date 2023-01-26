@@ -7,7 +7,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const {id, name, price, image, category, description, color} = item;
     
     const [isBack, setIsBack] = useState(false);
-    const [displayToolTip, setDisplayToolTip] = useState(false);
+    // const [displayToolTip, setDisplayToolTip] = useState(false);
     const [isInCart, setInCart] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
     const [isDisliked, setIsDisliked] = useState(false);
@@ -38,13 +38,13 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const handleFlip = () => {
       setIsBack(prev => !prev)
     }
-    const handleHover = () => {
-      setDisplayToolTip(prev => !prev);
-    }
+    // const handleHover = () => {
+    //   setDisplayToolTip(prev => !prev);
+    // }
 
 
-    const frontHover = <div>Click To View Description</div>
-    const backHover = <div>Click To View Item</div>
+    // const frontHover = <div>Click To View Description</div>
+    // const backHover = <div>Click To View Item</div>
 
     const notInCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsCartPlus /></Button>
     const addMoreToCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></Button>
@@ -58,9 +58,10 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const front = 
     <>
       <Card border="dark" style={{ width: '19rem' }}>
-        <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
+        <div id={id}>
+           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Img src={image} onClick={handleFlip} alt={description} />
-          {displayToolTip? frontHover : null }
+          {/* {displayToolTip? frontHover : null } */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
           <Card.Text>Price: ${price}</Card.Text>
@@ -76,13 +77,14 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const back = 
     <>
       <Card border="dark" style={{ width: '19rem' }}>
-        <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
+        <div id={id} onClick={handleFlip}>
+          {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Subtitle>Price: ${price}</Card.Subtitle>
             <Card.Text>{description}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
-        {displayToolTip? backHover: null}
+        {/* {displayToolTip? backHover: null} */}
         <Button class="btn btn-dark me-2" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
         <Button class="btn btn-dark me-2" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
         {isInCart ? addMoreToCart : notInCart}

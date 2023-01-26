@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from './Header';
+import { Form, Col, Row } from 'react-bootstrap';
 
 export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
   const navigate = useNavigate();
   const initialData = {
     name: "",
-    price: 0,
+    price: "",
     description: "",
     color: "",
     image: "",
@@ -50,12 +51,14 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
   //TODO: POST New Item to DB.json || Redirect to SHOP onSubmit
   return (
     <>
-        <Header
-          handleDarkMode={handleDarkMode}
-          isDarkMode={isDarkMode}
-        />
-        <h1>List Item</h1>
-        <form onSubmit={handleSubmit}>
+      <Header
+        handleDarkMode={handleDarkMode}
+        isDarkMode={isDarkMode}
+      />
+      <div class="container">
+      <h3>List your items using the form below</h3>
+      <br/>
+        <Form onSubmit={handleSubmit}>
           <label for="category">Category:</label>
             <select 
               name="category" 
@@ -69,56 +72,71 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               <option value="shoes">Shoes</option>
               <option value="jacket">Jacket</option>
             </select>
-
-            <input
-              class="form-control"
-              type="text" 
-              name="name"
-              placeholder="Item Name" 
-              required
-              value={formData.name}
-              onChange={handleInputs}
-            />
-            <input 
-              class="form-control"
-              type="number"
-              name="price"
-              placeholder="Price" 
-              step="0.01" 
-              required
-              value={formData.price}
-              onChange={handleInputs}
-            />
-            <input 
-              class="form-control"
-              type="text" 
-              name="description"
-              placeholder="Description" 
-              required
-              value={formData.description}
-              onChange={handleInputs}
-            />
-            <input 
-              class="form-control"
-              type="text" 
-              name="color"
-              placeholder="Color" 
-              required
-              value={formData.color}
-              onChange={handleInputs}
-            />
-            <input 
-              class="form-control"
-              type="text" 
-              name="image"
-              placeholder="Image URL" 
-              required
-              value={formData.image}
-              onChange={handleInputs}
-            />
+          <br/>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridItem">
+              <Form.Label>Item Name</Form.Label>
+              <Form.Control
+                type="text" 
+                name="name"
+                placeholder="Item Name" 
+                required
+                value={formData.name}
+                onChange={handleInputs}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridPrice">
+              <Form.Label>Price</Form.Label>
+              <Form.Control 
+                type="number"
+                name="price"
+                placeholder="Price" 
+                step="0.01" 
+                required
+                value={formData.price}
+                onChange={handleInputs}
+              />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlID="formGridColor">
+              <Form.Label>Color</Form.Label>
+              <Form.Control
+                type="text" 
+                name="color"
+                placeholder="Color" 
+                required
+                value={formData.color}
+                onChange={handleInputs}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlID="formGridImageURL">
+              <Form.Label>Image URL</Form.Label>
+              <Form.Control
+                type="text" 
+                name="image"
+                placeholder="Image URL" 
+                required
+                value={formData.image}
+                onChange={handleInputs}
+              />
+            </Form.Group>
+          </Row>
+          <Form.Group className="mb-3" controlID="formGridDescription">
+              <Form.Label>Description</Form.Label>
+              <Form.Control  
+                type="text" 
+                name="description"
+                placeholder="Description" 
+                required
+                value={formData.description}
+                onChange={handleInputs}
+              />
+            </Form.Group>
             <br/>
             <button class="btn btn-dark me-2" type="submit">List Item</button>
-        </form>
+        </Form>
+      </div>
     </>
   )
 }
