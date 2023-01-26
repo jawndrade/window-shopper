@@ -359,6 +359,15 @@
       "category": "Jackets",
       "description": "A revamped take on a classic varsity jacket in a soft faux suede fabric and relaxed-fit silhouette.",
       "color": "tan"
+    },
+    {
+      "name": "Puffer Vest",
+      "price": "50",
+      "description": "black puffer vest",
+      "color": "Black",
+      "image": "https://images.asos-media.com/products/topshop-utility-pocket-vest-in-black/202690324-1-black?$n_640w$&wid=513&fit=constrain",
+      "category": "jacket",
+      "id": 41
     }
   ],
   "users": [

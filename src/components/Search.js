@@ -19,7 +19,7 @@ export default function Search({searchItem, onChangeSearch}) {
           placeholder="Search"
           class="form-control"/>
         </div>
-        <button type="button" class="btn btn-dark">
+        <button type="button" class="btn btn-dark" id="custom-btn">
           <i class=""><BsSearch /></i>
         </button>
       </div>

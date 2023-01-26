@@ -44,11 +44,6 @@ h4 {
   color: var(--primary-color);
 }
 
-.bg-light {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--secondary-color),var(--bs-bg-opacity))!important;
-}
-
 label {
   color: var(--secondary-color);
 }
@@ -68,4 +63,15 @@ button {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#custom {
+  /* background-color: var(--heading-color); */
+  color: var(--primary-color);
+}
+
+#custom-btn {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
