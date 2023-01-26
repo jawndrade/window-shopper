@@ -56,7 +56,22 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
         />
         <h1>List Item</h1>
         <form onSubmit={handleSubmit}>
-            <input 
+          <label for="category">Category:</label>
+            <select 
+              name="category" 
+              id="category" 
+              required
+              value={formData.category}
+              onChange={handleInputs}
+            >
+              <option value="shirt">Shirt</option>
+              <option value="pants">Pants</option>
+              <option value="shoes">Shoes</option>
+              <option value="jacket">Jacket</option>
+            </select>
+
+            <input
+              class="form-control"
               type="text" 
               name="name"
               placeholder="Item Name" 
@@ -65,6 +80,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               onChange={handleInputs}
             />
             <input 
+              class="form-control"
               type="number"
               name="price"
               placeholder="Price" 
@@ -74,6 +90,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               onChange={handleInputs}
             />
             <input 
+              class="form-control"
               type="text" 
               name="description"
               placeholder="Description" 
@@ -82,6 +99,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               onChange={handleInputs}
             />
             <input 
+              class="form-control"
               type="text" 
               name="color"
               placeholder="Color" 
@@ -90,6 +108,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               onChange={handleInputs}
             />
             <input 
+              class="form-control"
               type="text" 
               name="image"
               placeholder="Image URL" 
@@ -97,21 +116,8 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               value={formData.image}
               onChange={handleInputs}
             />
-            <label for="category">Category:</label>
-            <select 
-              name="category" 
-              id="category" 
-              required
-              value={formData.category}
-              onChange={handleInputs}
-            >
-                <option value="shirt">Shirt</option>
-                <option value="pants">Pants</option>
-                <option value="shoes">Shoes</option>
-                <option value="jacket">Jacket</option>
-            </select>
-
-            <button type="submit">List Item</button>
+            <br/>
+            <button class="btn btn-dark me-2" type="submit">List Item</button>
         </form>
     </>
   )

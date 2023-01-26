@@ -5,7 +5,7 @@ import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 import Spotify from "react-spotify-embed";
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 
 
 export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser, handleDarkMode, isDarkMode}) {
@@ -40,13 +40,15 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
             isDarkMode={isDarkMode}
         />
         <h1>Shop</h1>
-        {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/37i9dQZF1DX0MLFaUdXnjA?si=fde25fe7c4f5466d"/> : null}
-        <Button name="spotify" class="btn btn-outline-dark" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</Button>
+        {musicShowing ? <Spotify wide link="https://open.spotify.com/track/6wuR7kYZIlA7XbCidEO1Op?si=38693832ded24406"/> : null}
+        <button name="spotify" class="btn btn-dark" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+        <br />
+        <br />
         <div>
             <div>
-                <Link to='/windowshop'><Button class="btn btn-outline-dark">Toggle Window Shop</Button></Link>
+                <Link to='/windowshop'><button class="btn btn-dark">Toggle Window Shop</button></Link>
             </div>
-
+            <br />
             <div> 
                 <Search
                 searchItem = {searchItem}
