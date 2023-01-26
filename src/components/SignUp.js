@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Col, Row } from 'react-bootstrap'
 
 export default function SignUp({ setCurrentUser}) {
-//----------------->TODO: POST new User to users.json => Redirect to SHOP upon success <--------------
-  
+
     const [users, setUsers] = useState();
     const navigate = useNavigate();
 
@@ -25,16 +24,17 @@ export default function SignUp({ setCurrentUser}) {
     .catch(err => console.log(err));
   }, []);
 
+    // handle form change 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
     }
 
+    // handle sign up 
     const handleSignUp = (e) => {
-
         e.preventDefault();
-
+        // search for an email that already exists in the database
         const found = users.find(user => user.email === formData.email);
-
+        // Create new User Object
         const newUser = 
         {       "id": users.length + 1,
                 "name": formData.name,
@@ -47,8 +47,7 @@ export default function SignUp({ setCurrentUser}) {
         };
 
         //Check to see if user email already exists 
-        //then post new user and update state
-        
+        //then post new user and update state + navigate to shop (login after signup)
         if (found === undefined) {
             fetch("http://localhost:3000/users", {
                 method: "POST",

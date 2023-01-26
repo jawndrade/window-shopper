@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Col, Row } from 'react-bootstrap';
 
-function Login( { setCurrentUser, setCartItems }) {
-//-------------->TODO: Handle Login Events || onSubmit Verify User exists and is authenticated => Route to Home <----------------
+function Login( { setCurrentUser, setCartItems, setDislikedItems, setLikedItems }) {
   
   //State for Current DB of Users
   const [users, setUsers] = useState();
@@ -11,6 +10,7 @@ function Login( { setCurrentUser, setCartItems }) {
   // callback to useNavigate for use within function
   const navigate = useNavigate();
 
+  // set initial form data
   const initialFormData = {
     email: "",
     password: ""
@@ -19,7 +19,7 @@ function Login( { setCurrentUser, setCartItems }) {
   //Form Input State
   const [formData, setFormData] = useState(initialFormData);
 
-   //Fetch Users From db.json and store in state
+   //Fetch Users From db.json and store in users State
    useEffect(() => {
     fetch(" http://localhost:3000/users")
     .then(res => res.json())
@@ -35,20 +35,29 @@ function Login( { setCurrentUser, setCartItems }) {
   // and then verifies that password is correct
   
   const handleLogin = (e) => {
-    const found = users.find(user => user.email === formData.email);
+
     e.preventDefault();
+    // Find user that's Email Corresponds with Database Email's
+    const found = users.find(user => user.email === formData.email);
+
+    // IF User Is Found, Then Check Password of User
     if (found !== undefined) {
+      // If Password matches, then update state (Login) and nav to shop
       if (found.password === formData.password){
         setCurrentUser(found);
         setCartItems(found.inCart)
+        setLikedItems(found.likes);
+        setDislikedItems(found.dislikes);
         navigate("/shop");
       }
+      // If Password does not match, alert the user
       else {
         alert("Password is incorrect, try again.");
       }
     }
+    // If Email Is Not Found, aler the user to try again or sign up
     else {
-      alert("Invalid Email, Try Again");
+      alert("Invalid Email, Try Again. Or Sign Up");
     }
   }
 

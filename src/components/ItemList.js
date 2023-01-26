@@ -4,6 +4,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems, setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
+  // For Each Item in itemList create an Item Component
   const itemCards = itemList.map(item => 
     <Item 
       key={item.id}
@@ -20,7 +21,7 @@ export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartI
       currentUser={currentUser}
     />
   )
-  
+  //Display Items -> If In windowShop mode Display by Index, If in Shop display All
   return (
     <Container>
         {/* <h1>Item List</h1> */}

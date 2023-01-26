@@ -4,6 +4,7 @@ import Header from './Header';
 import { Form, Col, Row } from 'react-bootstrap';
 
 export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
+
   const navigate = useNavigate();
   const initialData = {
     name: "",
@@ -15,11 +16,11 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
   }
 
   const [formData, setFormData] = useState(initialData)
-
+  // handle update State based on inputs
   const handleInputs = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
-
+  // on Submite create new item Obj and post to database
   const handleSubmit = (e) => {
     e.preventDefault();
     const newItemObj = {
@@ -32,7 +33,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
     }
     handleNewItemPost(newItemObj)
   }
-
+  // Helper function for posting new item to database/ after posting navigate to shop and update state
   const handleNewItemPost = (formData) => {
     fetch("http://localhost:3000/items", {
       method: "POST",
@@ -47,8 +48,6 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
     navigate("/shop")
   }
 
-
-  //TODO: POST New Item to DB.json || Redirect to SHOP onSubmit
   return (
     <>
       <Header

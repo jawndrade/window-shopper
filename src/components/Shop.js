@@ -13,26 +13,27 @@ export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems
   const [searchItem, setSearchItem] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
 
+// Set State of window shop to false when landing on this page
   setIsWindowShop(false);
   
+  // Toggle hide/show music
   const musicToggleClick = () => {
     setMusicShowing(prev => !prev)
   }
-  
+  // Filter Items w/ Search input
   const itemToDisplay = itemList.filter((item) =>
   item.name.toLowerCase().includes(searchItem.toLowerCase())
 )
-
+// Handle Category Selection Change
 const selectedCat = (e) => {
     setSelectedCategory(e.target.value)
 }
-
+// Filter Items w/ Category Selected by State
 const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
     if(selectedCategory === "All")return true
     return item.category === selectedCategory
 })
 
-    //------------------->TODO: Handle Category Filter onChange || Styling  <------------------
   return (
     <>
         <Header

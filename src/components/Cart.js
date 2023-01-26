@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './Header';
 import Item from './Item';
 
-export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItems, onAdd, onRemove, currentUser}) {
+export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItems, currentUser, likedItems, setLikedItems, dislikedItems, setDislikedItems}) {
 
+  // reduce prices into a single total price 
   const totalPrice = cartItems.reduce((total, item) => item.price + total , 0)
 
   //Get Count For How Many Of Duplicate In Cart
@@ -22,12 +23,17 @@ export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItem
   //Display Filtered Items Along W/ Total Count In Cart Of Item
   const itemsToShow = filteredItems.map((item) => (
   <>
-    <div>Total {item.name}'s in Cart: {counts[item.name]}</div>
+    <div>Total {item.name}s in Cart: {counts[item.name]}</div>
     <Item 
       key={item.id}
       item={item}
       cartItems={cartItems}
       setCartItems={setCartItems}
+      likedItems={likedItems}
+      setLikedItems={setLikedItems}
+      dislikedItems={dislikedItems}
+      setDislikedItems={setDislikedItems}
+      currentUser={currentUser}
     />
   </>
   ))
