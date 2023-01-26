@@ -178,7 +178,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const yourDislikedItems = dislikedItems.find((disliked) => disliked.id === item.id)
   if (isWindowShop === true) {
     setIndex(prev => prev + 1);
-    setIsDisliked(true);
+    setIsDisliked(true)
+    setIsLiked(false)
     if (isLiked === true) {
       setIsLiked(false);
     }
@@ -195,6 +196,8 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     }
   }
   else {
+    setIsDisliked(true)
+    setIsLiked(false)
     if(likedCheck !== undefined){
       const newLikes = likedItems.filter((item) => item.name !== name)
       setLikedItems(newLikes)
