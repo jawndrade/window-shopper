@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { Button, Form, Col, Row } from 'react-bootstrap';
 
 function Login( { setCurrentUser, setCartItems }) {
 //-------------->TODO: Handle Login Events || onSubmit Verify User exists and is authenticated => Route to Home <----------------
@@ -52,17 +53,39 @@ function Login( { setCurrentUser, setCartItems }) {
   }
 
   return (
-    <div>
+    <div class="container">
+        <br/>
+        <h1>WindowShopper</h1>
+        <br/>
+        <Form onSubmit={handleLogin}>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+                <Form.Control
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  onChange={handleChange}
+                  value={formData.email}/>
+                </Form.Group>
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+                <Form.Control 
+                  name="password"
+                  type="text"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  value={formData.password}/>
+                </Form.Group>
+          </Row>
         <div>
-        <img src="" alt="" id=""/>
+          <Button type="submit" class="btn btn-dark me-3" id="custom">Login</Button>
         </div>
-        <h1>Window Shopper</h1>
-        <form onSubmit={handleLogin}>
-            <input name="email" type="text" placeholder="Email" onChange={handleChange} value={formData.email}/>
-            <input name="password"type="text" placeholder="Password" onChange={handleChange} value={formData.password}/>
-            <button type="submit">Login</button>
-        </form>
-        <Link to="/signup"><button>Sign Up</button></Link>
+        <br/>
+        <div>
+        <Link to="/signup"><Button class="btn btn-dark" id="custom">Sign Up</Button></Link>
+        </div>
+      </Form>
     </div>
   )
 }

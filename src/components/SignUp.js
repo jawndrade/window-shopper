@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { Button, Form, Col, Row } from 'react-bootstrap'
 
 export default function SignUp({ setCurrentUser}) {
 //----------------->TODO: POST new User to users.json => Redirect to SHOP upon success <--------------
@@ -68,11 +69,10 @@ export default function SignUp({ setCurrentUser}) {
         }
     }
     return (
-        <>  
+        <>
             <div>
                 <h1>WindowShopper</h1>
             </div>
-
             <Link to='/'><button>Return To Login</button></Link>
 
             <form onSubmit={handleSignUp}>
