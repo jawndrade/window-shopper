@@ -87,6 +87,7 @@ GET | /items | fetches a list of items and their data from the database
 POST | /items | keeps a new item from "list item" form
 GET | /users | fetches a list of users
 POST | /users | keeps a new user from sign up page
+PATCH | /users | updates users cart, likes, dislikes
 
 ### Client-Side Routes
 ROUTE | DESCRIPTION
