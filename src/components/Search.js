@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsSearch } from 'react-icons/bs';
 
 export default function Search({searchItem, onChangeSearch}) {
 
@@ -9,11 +10,19 @@ export default function Search({searchItem, onChangeSearch}) {
     
   return (
     <>
+      <div class="input-group">
+        <div class="form-outline">
         <input 
           value={searchItem}
           onChange={handleChange}
           type="text" 
-          placeholder='Search'/>
+          placeholder="Search"
+          class="form-control"/>
+        </div>
+        <button type="button" class="btn btn-dark">
+          <i class=""><BsSearch /></i>
+        </button>
+      </div>
     </>
   )
 }

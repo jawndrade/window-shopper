@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart } from "react-icons/bs";
+import { BsFillCartPlusFill, BsFillCartDashFill, BsFillHandThumbsDownFill, BsFillHeartFill, BsHeart, BsHandThumbsDown, BsCartPlus } from "react-icons/bs";
 import { Button, ButtonToolbar, Card } from 'react-bootstrap'
 
 export default function Item({item, cartItems, setCartItems, likedItems, setLikedItems,dislikedItems,setDislikedItems, isWindowShop, index, setIndex, currentUser}) {
@@ -7,7 +7,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const {id, name, price, image, category, description, color} = item;
     
     const [isBack, setIsBack] = useState(false);
-    const [displayToolTip, setDisplayToolTip] = useState(false);
+    // const [displayToolTip, setDisplayToolTip] = useState(false);
     const [isInCart, setInCart] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
     const [isDisliked, setIsDisliked] = useState(false);
@@ -38,33 +38,37 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     const handleFlip = () => {
       setIsBack(prev => !prev)
     }
-    const handleHover = () => {
-      setDisplayToolTip(prev => !prev);
-    }
+    // const handleHover = () => {
+    //   setDisplayToolTip(prev => !prev);
+    // }
 
 
-    const frontHover = <div>Click To View Description</div>
-    const backHover = <div>Click To View Item</div>
+    // const frontHover = <div>Click To View Description</div>
+    // const backHover = <div>Click To View Item</div>
 
-    const notInCart = <button onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></button>
-    const addMoreToCart = <button onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></button>
-    const inCart = <button onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></button>
+    const notInCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsCartPlus /></Button>
+    const addMoreToCart = <Button class="btn btn-dark" onClick={() => onAddToCart(item)}><BsFillCartPlusFill /></Button>
+    const inCart = <Button class="btn btn-dark" onClick={() => onRemoveFromCart(item)}><BsFillCartDashFill/></Button>
 
-    const filledHeart = <BsFillHeartFill/>;
-    const emptyHeart = <BsHeart/>;
+    const filledHeart = <BsFillHeartFill/>
+    const emptyHeart = <BsHeart/>
+    const filledThumb = <BsFillHandThumbsDownFill/>
+    const emptyThumb = <BsHandThumbsDown/>
+
     const front = 
     <>
       <Card border="dark" style={{ width: '19rem' }}>
-        <div id={id} onMouseOver={handleHover} onMouseOut={handleHover}>
+        <div id={id}>
+           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Img src={image} onClick={handleFlip} alt={description} />
+          {/* {displayToolTip? frontHover : null } */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
           <Card.Text>Price: ${price}</Card.Text>
-          <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
-          <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
+          <Button class="btn btn-dark me-2" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+          <Button class="btn btn-dark me-2" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
           {isInCart ? addMoreToCart : notInCart}
           {isInCart ? inCart : null}
-          {displayToolTip? frontHover : null }
         </Card.Body>
         </div>
       </Card>
@@ -73,15 +77,16 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   const back = 
     <>
       <Card border="dark" style={{ width: '19rem' }}>
-        <div id={id} onClick={handleFlip} onMouseOver={handleHover} onMouseOut={handleHover}>
+        <div id={id} onClick={handleFlip}>
+          {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Subtitle>Price: ${price}</Card.Subtitle>
             <Card.Text>{description}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
-        {displayToolTip? backHover: null}
-        <button onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</button>
-        <button onClick={() => onAddToDislikes(item)}><BsFillHandThumbsDownFill/></button>
+        {/* {displayToolTip? backHover: null} */}
+        <Button class="btn btn-dark me-2" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+        <Button class="btn btn-dark me-2" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
         {isInCart ? addMoreToCart : notInCart}
               {isInCart ? inCart : null}
         </Card.Body>
