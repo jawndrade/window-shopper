@@ -104,6 +104,7 @@ code {
   align-content: center;
   justify-content: left; 
   display: flex;
+  margin-bottom: 35px;
 }
 
 #card-buttons{
