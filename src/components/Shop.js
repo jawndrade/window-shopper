@@ -36,19 +36,19 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
 
   return (
     <>
-        <Header
-            handleDarkMode={handleDarkMode}
-            isDarkMode={isDarkMode}
-        />
-        <div class="container" id="custom">
-        <h3>Shop</h3>
+      <Header
+          handleDarkMode={handleDarkMode}
+          isDarkMode={isDarkMode}
+      />
+        <div class="container" id="shop-top-div">
           <div id="mini-custom">
             {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
             <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
           </div>
-        <br />
+        <br/>
+        <br/>
+        <h3>Shop</h3>
         <div>
-            <br />
             <div> 
                 <Search
                 searchItem = {searchItem}

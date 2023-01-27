@@ -54,7 +54,7 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
         handleDarkMode={handleDarkMode}
         isDarkMode={isDarkMode}
       />
-      <div class="container">
+      <div class="container" id="add-item-form-custom">
       <h3>List your items using the form below</h3>
       <br/>
         <Form onSubmit={handleSubmit}>

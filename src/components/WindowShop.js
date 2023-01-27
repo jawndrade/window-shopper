@@ -39,24 +39,28 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
   })
       
   return (
-        <>
-          <Header
-            handleDarkMode={handleDarkMode}
-            isDarkMode={isDarkMode}
-          />
-            <h3>Window Shop</h3>
-            <div id="mini-custom">
-              {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
-              <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
-            </div>
-          <br/>
-            <div> 
-                <Search
-                searchItem = {searchItem}
-                onChangeSearch={setSearchItem}/>
-            </div>
-            <br/>
-            <div>
+    <>
+      <Header
+        handleDarkMode={handleDarkMode}
+        isDarkMode={isDarkMode}
+      />
+      <div class="container" id="shop-top-div">
+        <div id="mini-custom">
+          {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
+          <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+        </div>
+        <br/>
+        <br/>
+        <h3>Window Shop</h3>
+          <h4>Like or dislike to view more items!</h4>
+      </div>
+          {/* <div class="container" id="shop-search-bar"> 
+            <Search
+              searchItem = {searchItem}
+              onChangeSearch={setSearchItem}/>
+          </div>
+        </div>
+          <div>
             <Form>
               <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
                 <Form.Label>Category</Form.Label>
@@ -74,8 +78,8 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
                 </Form.Group>
               </Form>
             <br/>
-            </div>
-            <div id="window-shop-item">
+            </div> */}
+          <div id="window-shop-item">
             <ItemList
               isWindowShop={isWindowShop}
               setIsWindowShop={setIsWindowShop}
@@ -91,8 +95,8 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
               currentUser={currentUser}
             />
             </div>
-          <br/>
-          <br/>
+          {/* <br/>
+          <br/> */}
         </>
   )
 }

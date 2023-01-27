@@ -42,6 +42,7 @@ h3 {
 
 h4 {
   color: var(--primary-color);
+  size: smaller;
 }
 
 label {
@@ -91,7 +92,8 @@ code {
 }
 
 #mini-custom{
-  max-width: 375px;
+  max-width: 400px;
+  margin-top: 10px;
 }
 
 .card{
@@ -102,11 +104,35 @@ code {
   /* margin: auto; */
   width: 100%;
   align-content: center;
-  justify-content: left; 
+  justify-content: center; 
   display: flex;
   margin-bottom: 35px;
+  margin-top: 2%;
 }
 
 #card-buttons{
   vertical-align: bottom;
+}
+
+.fixed-top {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#shop-top-div {
+  margin-top: 8%;
+  margin-bottom: 5%;
+
+}
+
+#add-item-form-custom {
+  margin-top: 10%;
+}
+
+#likes-custom-div {
+  margin-top: 10%;
+}
+
+#cart-custom-div {
+  margin-top: 10%;
 }
