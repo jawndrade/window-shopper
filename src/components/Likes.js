@@ -34,10 +34,14 @@ export default function Likes({handleDarkMode, isDarkMode, likedItems, setLikedI
             handleDarkMode={handleDarkMode}
             isDarkMode={isDarkMode}
         />
-        <h2>Liked Items</h2>
-        {likesToShow}
-        <h2>Disliked Items</h2>
-        {dislikesToShow}
+        <h3>Liked Items</h3>
+        <div class="row row-cols-3 g-3" id="item-list-div">
+            {likesToShow}
+        </div>
+        <h3>Disliked Items</h3>
+        <div class="row row-cols-3 g-3" id="item-list-div">
+            {dislikesToShow}
+        </div>
         
     </>
   )
