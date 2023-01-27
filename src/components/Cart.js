@@ -40,13 +40,16 @@ export default function Cart({handleDarkMode, isDarkMode, cartItems, setCartItem
 
   return (
     <>
-        <Header
-          handleDarkMode={handleDarkMode}
-          isDarkMode={isDarkMode}
-        />
-        <h2>Cart Items</h2>
-        <h3>Total: ${totalPrice}</h3>
+      <Header
+        handleDarkMode={handleDarkMode}
+        isDarkMode={isDarkMode}
+      />
+      <div class="container" id="cart-custom-div">
+        <h3>Cart Items</h3>
+        <h4>Total: ${totalPrice}</h4>
+        <br/>
         {itemsToShow}
+      </div>
     </>
   )
 }

@@ -34,6 +34,7 @@ export default function Likes({handleDarkMode, isDarkMode, likedItems, setLikedI
             handleDarkMode={handleDarkMode}
             isDarkMode={isDarkMode}
         />
+        <div class="container" id="likes-custom-div">
         <h3>Liked Items</h3>
         <div class="row row-cols-3 g-3" id="item-list-div">
             {likesToShow}
@@ -42,7 +43,7 @@ export default function Likes({handleDarkMode, isDarkMode, likedItems, setLikedI
         <div class="row row-cols-3 g-3" id="item-list-div">
             {dislikesToShow}
         </div>
-        
+    </div>   
     </>
   )
 }
