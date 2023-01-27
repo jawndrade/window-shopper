@@ -74,25 +74,27 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     // Front Of Item Card
     const front = 
     <>
-      <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
+      <Card border="dark" style={{ width: '17rem' }}>
         <div id={id}>
            {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <OverlayTrigger
             placement="bottom"
-            delay={{ show: 250, hide: 400 }}
+            delay={{ show: 150, hide: 150 }}
             overlay={renderTooltipFront}
           >
-            <Card.Img src={image} onClick={handleFlip} alt={description} />
+            <Card.Img src={image} onClick={handleFlip} alt={description} id="card-img-custom" />
           </OverlayTrigger>
           {/* {displayToolTip? frontHover : null } */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-          <Card.Text>Price: ${price}</Card.Text>
-          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
-          {isInCart ? addMoreToCart : notInCart}
-          {isInCart ? inCart : null}
-        </Card.Body>
+            <Card.Text>Price: ${price}</Card.Text>
+          </Card.Body>
+          <Card.Body id="card-buttons">
+            <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+            <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
+            {isInCart ? addMoreToCart : notInCart}
+            {isInCart ? inCart : null}
+          </Card.Body>
         </div>
       </Card>
     </>
@@ -100,26 +102,25 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   // Back Of Item Card
   const back = 
     <>
-      <Card className=".card-deck" border="dark" style={{ width: '19rem' }}>
+      <Card border="dark" style={{ width: '17rem' }}>
         <div id={id} onClick={handleFlip}>
           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>
+              <Card.Title>{name}</Card.Title>
+                <Card.Subtitle>Price: ${price}</Card.Subtitle>
+              <br/>
             <OverlayTrigger
               placement="bottom"
-              delay={{ show: 250, hide: 400 }}
-              overlay={renderTooltipBack}
-            >
-              <Card.Title>{name}</Card.Title>
+              delay={{ show: 150, hide: 150 }}
+              overlay={renderTooltipBack}>
+              <Card.Text>{description}</Card.Text>
             </OverlayTrigger>
-            <Card.Subtitle>Price: ${price}</Card.Subtitle>
-            <br/>
-            <Card.Text>{description}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">{category}, {color}</Card.Subtitle>
         {/* {displayToolTip? backHover: null} */}
         <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
         <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked? filledThumb: emptyThumb}</Button>
         {isInCart ? addMoreToCart : notInCart}
-              {isInCart ? inCart : null}
+        {isInCart ? inCart : null}
         </Card.Body>
       </div>
       </Card>

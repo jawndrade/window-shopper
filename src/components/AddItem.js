@@ -58,8 +58,10 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
       <h3>List your items using the form below</h3>
       <br/>
         <Form onSubmit={handleSubmit}>
-          <label for="category">Category:</label>
-            <select 
+          <Form.Group controlId="formBasicSelect" style={{width: '100px'}}>
+            <Form.Label>Category</Form.Label>
+            <Form.Select
+              as="select"
               name="category" 
               id="category" 
               required
@@ -70,7 +72,8 @@ export default function AddItem({handleAddItem, handleDarkMode, isDarkMode}) {
               <option value="pants">Pants</option>
               <option value="shoes">Shoes</option>
               <option value="jacket">Jacket</option>
-            </select>
+            </Form.Select>
+          </Form.Group>
           <br/>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridItem">

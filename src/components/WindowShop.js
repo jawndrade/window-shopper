@@ -4,6 +4,8 @@ import ItemList from './ItemList';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import Spotify from "react-spotify-embed";
+import { Form } from 'react-bootstrap';
+
 
 export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
@@ -38,35 +40,42 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
       
   return (
         <>
-            <Header
-              handleDarkMode={handleDarkMode}
-              isDarkMode={isDarkMode}
-            />
-            <h1>Window Shop</h1>
-            {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
-            <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
-            <div>
-              <div>
-                <Link to='/shop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
-              </div>
+          <Header
+            handleDarkMode={handleDarkMode}
+            isDarkMode={isDarkMode}
+          />
+            <h3>Window Shop</h3>
+            <div id="mini-custom">
+              {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
+              <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
             </div>
-
+          <br/>
             <div> 
                 <Search
                 searchItem = {searchItem}
                 onChangeSearch={setSearchItem}/>
             </div>
-
+            <br/>
             <div>
-                <label for="category">Category:</label>
-                <select name="category" id="category" onChange={selectedCat}>
+            <Form>
+              <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
+                <Form.Label>Category</Form.Label>
+                  <Form.Select
+                    as="select"
+                    name="category"
+                    id="category"
+                    onChange={selectedCat}>
                     <option value="All">All Categories</option>
                     <option value="Tops">Shirt</option>
                     <option value="bottoms">Pants</option>
                     <option value="shoes">Shoes</option>
                     <option value="Jackets">Jacket</option>
-                </select>
+                  </Form.Select>
+                </Form.Group>
+              </Form>
+            <br/>
             </div>
+            <div id="window-shop-item">
             <ItemList
               isWindowShop={isWindowShop}
               setIsWindowShop={setIsWindowShop}
@@ -81,6 +90,7 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
               setIndex={setIndex}
               currentUser={currentUser}
             />
+            </div>
           <br/>
           <br/>
         </>

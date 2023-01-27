@@ -67,11 +67,46 @@ code {
 
 #custom {
   background-color: var(--heading-color);
-  color: var(--primary-color);
+  color: var(--font-color);
 }
 
 #custom-btn {
   background-color: var(--bg-color);
   color: var(--primary-color);
   border-color: var(--primary-color);
+}
+
+#card-img-custom {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.navbar-brand
+{
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#mini-custom{
+  max-width: 375px;
+}
+
+.card{
+  margin-right: 15px;
+}
+
+#item-list-div{
+  /* margin: auto; */
+  width: 100%;
+  align-content: center;
+  justify-content: left; 
+  display: flex;
+  margin-bottom: 35px;
+}
+
+#card-buttons{
+  vertical-align: bottom;
 }

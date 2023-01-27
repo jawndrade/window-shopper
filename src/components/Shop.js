@@ -5,7 +5,7 @@ import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 import Spotify from "react-spotify-embed";
-import { Button, Dropdown } from 'react-bootstrap';
+import { Button, Dropdown, Form } from 'react-bootstrap';
 
 
 export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser, handleDarkMode, isDarkMode}) {
@@ -42,32 +42,38 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
         />
         <div class="container" id="custom">
         <h3>Shop</h3>
+          <div id="mini-custom">
             {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
             <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
-        <br />
+          </div>
         <br />
         <div>
-            <div>
-                <Link to='/windowshop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
-            </div>
             <br />
             <div> 
                 <Search
                 searchItem = {searchItem}
                 onChangeSearch={setSearchItem}/>
             </div>
-
+            <br/>
             <div>
-                <label for="category">Category:</label>
-                <select name="category" id="category" onChange={selectedCat}>
+            <Form>
+              <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
+                <Form.Label>Category</Form.Label>
+                  <Form.Select
+                    as="select"
+                    name="category"
+                    id="category"
+                    onChange={selectedCat}>
                     <option value="All">All Categories</option>
                     <option value="Tops">Shirt</option>
                     <option value="bottoms">Pants</option>
                     <option value="shoes">Shoes</option>
                     <option value="Jackets">Jacket</option>
-                </select>
+                  </Form.Select>
+                </Form.Group>
+              </Form>
             </div>
-
+            <br/>
             <div>
                 <ItemList 
                     isWindowShop={isWindowShop}

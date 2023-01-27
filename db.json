@@ -229,7 +229,7 @@
       "id": 26,
       "name": "Levi's 501 Original Fit Jeans",
       "price": 70,
-      "image": "https://m.media-amazon.com/images/I/913fQp-qCNL._AC_UF1000,1000_QL80_.jpg",
+      "image": "http://jcpenney.scene7.com/is/image/JCPenney/DP0407202207044786M",
       "category": "bottoms",
       "description": "The Levi's 501 Original Fit Jeans are a classic straight leg jean made with non-stretch denim.",
       "color": "Blue"
@@ -368,6 +368,33 @@
       "image": "https://images.asos-media.com/products/topshop-utility-pocket-vest-in-black/202690324-1-black?$n_640w$&wid=513&fit=constrain",
       "category": "jacket",
       "id": 41
+    },
+    {
+      "name": "Men's Knit Sweater",
+      "price": "420.69",
+      "description": "Crewneck chunky knit sweater",
+      "color": "Beige",
+      "image": "https://static.zara.net/photos///2023/V/0/2/p/1869/400/707/2/w/1024/1869400707_6_1_1.jpg?ts=1667383410575",
+      "category": "",
+      "id": 42
+    },
+    {
+      "name": "Leather Loafers",
+      "price": "70",
+      "description": "Lug sole leather loafers with gold embellishment",
+      "color": "Black",
+      "image": "https://static.zara.net/photos///2022/I/1/1/p/2523/010/800/2/w/1024/2523010800_6_2_1.jpg?ts=1664360361425",
+      "category": "shoes",
+      "id": 43
+    },
+    {
+      "name": "Striped knit polo",
+      "price": "40",
+      "description": "Knit polo long sleeve shirt with lapel collar and front button closure.",
+      "color": "Brown",
+      "image": "https://static.zara.net/photos///2023/V/0/2/p/9598/401/704/2/w/1024/9598401704_6_1_1.jpg?ts=1674208807160",
+      "category": "",
+      "id": 44
     }
   ],
   "users": [

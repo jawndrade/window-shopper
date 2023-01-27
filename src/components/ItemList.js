@@ -23,12 +23,9 @@ export default function ItemList({isWindowShop, setIsWindowShop, itemList, cartI
   )
   //Display Items -> If In windowShop mode Display by Index, If in Shop display All
   return (
-    <Container>
-        {/* <h1>Item List</h1> */}
+    <div class="row row-cols-3 g-3" id="item-list-div">
         <br/>
-      <Row class="gx-5">
-        {isWindowShop? itemCards[index] : itemCards }
-      </Row>
-    </Container>
+          {isWindowShop? itemCards[index] : itemCards }
+    </div>
   )
 }
