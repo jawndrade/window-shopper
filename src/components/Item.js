@@ -74,7 +74,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
     // Front Of Item Card
     const front = 
     <>
-      <Card className="card-deck-wrapper" border="dark" style={{ width: '17rem' }}>
+      <Card border="dark" style={{ width: '17rem' }}>
         <div id={id}>
            {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <OverlayTrigger
@@ -87,12 +87,14 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
           {/* {displayToolTip? frontHover : null } */}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-          <Card.Text>Price: ${price}</Card.Text>
-          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
-          <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
-          {isInCart ? addMoreToCart : notInCart}
-          {isInCart ? inCart : null}
-        </Card.Body>
+            <Card.Text>Price: ${price}</Card.Text>
+          </Card.Body>
+          <Card.Body id="card-buttons">
+            <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToLikes(item)}>{isLiked? filledHeart: emptyHeart}</Button>
+            <Button class="btn btn-dark me-3" id="custom-btn" onClick={() => onAddToDislikes(item)}>{isDisliked ? filledThumb : emptyThumb}</Button>
+            {isInCart ? addMoreToCart : notInCart}
+            {isInCart ? inCart : null}
+          </Card.Body>
         </div>
       </Card>
     </>
@@ -100,7 +102,7 @@ export default function Item({item, cartItems, setCartItems, likedItems, setLike
   // Back Of Item Card
   const back = 
     <>
-      <Card className=".card-deck-wrapper" border="dark" style={{ width: '17rem' }}>
+      <Card border="dark" style={{ width: '17rem' }}>
         <div id={id} onClick={handleFlip}>
           {/* onMouseOver={handleHover} onMouseOut={handleHover}> */}
           <Card.Body>

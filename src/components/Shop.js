@@ -48,9 +48,6 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
           </div>
         <br />
         <div>
-            <div>
-                <Link to='/windowshop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
-            </div>
             <br />
             <div> 
                 <Search
@@ -76,7 +73,7 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
                 </Form.Group>
               </Form>
             </div>
-
+            <br/>
             <div>
                 <ItemList 
                     isWindowShop={isWindowShop}

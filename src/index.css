@@ -67,7 +67,7 @@ code {
 
 #custom {
   background-color: var(--heading-color);
-  color: var(--primary-color);
+  color: var(--font-color);
 }
 
 #custom-btn {
@@ -92,4 +92,20 @@ code {
 
 #mini-custom{
   max-width: 375px;
+}
+
+.card{
+  margin-right: 15px;
+}
+
+#item-list-div{
+  /* margin: auto; */
+  width: 100%;
+  align-content: center;
+  justify-content: left; 
+  display: flex;
+}
+
+#card-buttons{
+  vertical-align: bottom;
 }
