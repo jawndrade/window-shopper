@@ -44,9 +44,11 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
               handleDarkMode={handleDarkMode}
               isDarkMode={isDarkMode}
             />
-            <h1>Window Shop</h1>
-            {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
-            <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+            <h3>Window Shop</h3>
+            <div id="mini-custom">
+              {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
+              <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+            </div>
             <div>
               <div>
                 <Link to='/shop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
@@ -58,7 +60,7 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
                 searchItem = {searchItem}
                 onChangeSearch={setSearchItem}/>
             </div>
-
+            <br/>
             <div>
             <Form>
               <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
