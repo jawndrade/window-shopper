@@ -48,11 +48,11 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
         <div id="mini-custom">
           {musicShowing ? <Spotify wide link="https://open.spotify.com/playlist/67WNhw7U3dnXxYX77z0Id0?si=6b360df385604c85"/> : null}
           <button name="spotify" class="btn btn-dark" id="custom-btn" onClick={musicToggleClick}>{musicShowing ? "Hide Store Music" : "Show Store Music"}</button>
+        </div>
         <br/>
         <br/>
         <h3>Window Shop</h3>
           <h4>Like or dislike to view more items!</h4>
-        </div>
       </div>
           {/* <div class="container" id="shop-search-bar"> 
             <Search

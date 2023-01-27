@@ -107,6 +107,7 @@ code {
   justify-content: center; 
   display: flex;
   margin-bottom: 35px;
+  margin-top: 2%;
 }
 
 #card-buttons{
