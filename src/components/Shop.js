@@ -5,7 +5,7 @@ import Search from './Search';
 import { Link } from 'react-router-dom';
 import ItemList from './ItemList';
 import Spotify from "react-spotify-embed";
-import { Button, Dropdown } from 'react-bootstrap';
+import { Button, Dropdown, Form } from 'react-bootstrap';
 
 
 export default function Shop({isWindowShop, setIsWindowShop, itemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser, handleDarkMode, isDarkMode}) {
@@ -56,16 +56,24 @@ const selectedCategoryToDisplay = itemToDisplay.filter(item =>{
                 searchItem = {searchItem}
                 onChangeSearch={setSearchItem}/>
             </div>
-
+            <br/>
             <div>
-                <label for="category">Category:</label>
-                <select name="category" id="category" onChange={selectedCat}>
+            <Form>
+              <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
+                <Form.Label>Category</Form.Label>
+                  <Form.Select
+                    as="select"
+                    name="category"
+                    id="category"
+                    onChange={selectedCat}>
                     <option value="All">All Categories</option>
                     <option value="Tops">Shirt</option>
                     <option value="bottoms">Pants</option>
                     <option value="shoes">Shoes</option>
                     <option value="Jackets">Jacket</option>
-                </select>
+                  </Form.Select>
+                </Form.Group>
+              </Form>
             </div>
 
             <div>

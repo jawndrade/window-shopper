@@ -75,3 +75,17 @@ code {
   color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
+#card-img-custom {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.navbar-brand
+{
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}

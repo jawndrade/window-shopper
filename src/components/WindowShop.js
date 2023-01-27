@@ -4,6 +4,8 @@ import ItemList from './ItemList';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import Spotify from "react-spotify-embed";
+import { Form } from 'react-bootstrap';
+
 
 export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, setIsWindowShop, itemList, setItemList, cartItems, setCartItems,likedItems,setLikedItems,dislikedItems,setDislikedItems, index, setIndex, currentUser}) {
 
@@ -50,7 +52,7 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
                 <Link to='/shop'><button class="btn btn-dark" id="custom-btn">Toggle Window Shop</button></Link>
               </div>
             </div>
-
+            <br/>
             <div> 
                 <Search
                 searchItem = {searchItem}
@@ -58,14 +60,22 @@ export default function WindowShop({handleDarkMode, isDarkMode, isWindowShop, se
             </div>
 
             <div>
-                <label for="category">Category:</label>
-                <select name="category" id="category" onChange={selectedCat}>
+            <Form>
+              <Form.Group controlId="formBasicSelect" style={{width: '160px'}}>
+                <Form.Label>Category</Form.Label>
+                  <Form.Select
+                    as="select"
+                    name="category"
+                    id="category"
+                    onChange={selectedCat}>
                     <option value="All">All Categories</option>
                     <option value="Tops">Shirt</option>
                     <option value="bottoms">Pants</option>
                     <option value="shoes">Shoes</option>
                     <option value="Jackets">Jacket</option>
-                </select>
+                  </Form.Select>
+                </Form.Group>
+              </Form>
             </div>
             <ItemList
               isWindowShop={isWindowShop}
