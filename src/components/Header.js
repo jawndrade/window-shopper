@@ -15,7 +15,7 @@ export default function Header({handleDarkMode, isDarkMode}) {
   return (
     <>
       <Container>
-      <Navbar class="me-auto" bg="bg-custom-light" expand="sm" id="custom">
+      <Navbar fixed="top" id="custom">
           <Navbar.Brand id="custom" onClick={handleBackToShop}>WindowShopper</Navbar.Brand>
           <Nav className="ms-auto" pullRight>
             <button class="btn btn-dark me-2" id="custom-btn" onClick={handleDarkMode}>{isDarkMode ? "Light Mode" : "Dark Mode"}</button>
